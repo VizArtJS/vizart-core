@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="lib/sigma/sigma.min.js"></script>
+    <script src="lib/chroma.min.js"></script>
+    <script src="lib/sigma/plugins/sigma.layout.forceAtlas2.min.js"></script>
+    <script src="./vizart-core.standalone.js"></script>
+    <style>
+        body,html {
+            height: 100%;
+        }
+
+        #test {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+<script>
+    $(document).ready(function () {
+
+
+        let palette = VizArtCore.reduceToPalette(20, VizArtCore.AllColors, {
+            colorblind: false
+        });
+        let _selector = new VizArtCore.HclSelector(VizArtCore.AllColors);
+        let subspaceSamples = VizArtCore.getSubColorSpace(palette, function (c) {
+            return _selector.validate(c.hcl);
+        });
+
+
+
+
+        d3.json('assets/twitter_mutual2.json', (err, res)=>{
+            console.log(res);
+            // INIT SIGMA
+            let s = new sigma({
+                graph: res,
+                renderers: [
+                    {
+                        container: document.getElementById('test'),
+                        type: 'webgl'
+                    }
+                ],
+                settings: {
+                    // Labels:
+                    font: "'Arial', sans-serif;",
+                    defaultLabelColor: '#333',
+                    defaultLabelSize: 16,
+                    defaultLabelBGColor: '#fff',
+                    defaultLabelHoverColor: '#000',
+                    labelThreshold: 100,
+
+                    // Edges
+                    drawEdges: true,
+
+                    maxNodeSize: 8,
+
+                    mouseEnabled: true,
+                    blockScroll: true,
+                    minRatio: 1,
+                    maxRatio: 1
+                }
+            });
+//
+//        s.refresh();
+            s.render();
+
+        });
+
+
+    });
+</script>
+</body>
+</html>

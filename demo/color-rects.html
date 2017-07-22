@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <script src="lib/chroma.min.js"></script>
+    <script src="./vizart-core.standalone.js"></script>
+    <style>
+        body,html {
+            height: 100%;
+        }
+
+        .primary {
+
+        }
+
+        .sub {
+            display:inline-block;
+            width: 30px;
+            height: 30px;
+            margin-left: 1px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+
+        let palette = VizArtCore.reduceToPalette(20, VizArtCore.AllColors, {
+            colorblind: false
+        });
+        let _selector = new VizArtCore.HclSelector(VizArtCore.AllColors);
+        let subspaceSamples = VizArtCore.getSubColorSpace(palette, function (c) {
+            return _selector.validate(c.hcl);
+        });
+
+        let primes = _.keys(subspaceSamples);
+        let sortedPrimes= VizArtCore.sortPalette(primes.map((d)=>{
+            return chroma.hex(d);
+        }), 'difference');
+
+
+        let appended = d3.select('body').selectAll('.prime').data(sortedPrimes).enter().append('div').attr('class', 'prime');
+
+        appended.each(function(d, i) {
+            let group = subspaceSamples[d];
+
+            let sortedGroup = VizArtCore.sortPalette(group.map((d)=>{
+                return chroma.hex(d);
+            }), 'rgb');
+            d3.select(this).selectAll('.sub').data(sortedGroup).enter().append('div').attr('class', 'sub')
+                .style('background-color', (d)=>{
+                return d.hex();
+            });
+        });
+
+    });
+</script>
+</body>
+</html>
