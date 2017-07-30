@@ -59,27 +59,7 @@ const BaseOpt = {
 
     legend: {
         enabled: false,
-    },
-
-    // credits: {
-    //     enabled: true,
-    //     href: 'http://www.smartsct.com',
-    //     text: 'Powered By ExceedData',
-    //     position: '',
-    //     style: ''
-    // },
-    // noData : {
-    //     enabled: false
-    // },
-    // loading: {
-    //     hideDuration: 100,
-    //     labelStyle: { "fontWeight": "bold", "position": "relative", "top": "45%" },
-    //     showDuration: 100,
-    //     style: ""
-    // },
-
-
-
+    }
 }
 
 
