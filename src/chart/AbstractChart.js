@@ -1,4 +1,4 @@
-import { select, mouse } from 'd3-selection';
+import { select } from 'd3-selection';
 import 'd3-transition';
 
 import check from '../util/check';
@@ -41,11 +41,6 @@ class AbstractChart {
             .append("g")
             .attr("transform", "translate(" + this._options.chart.margin.left + "," + this._options.chart.margin.top + ")");
 
-        this._tooltip = select(this._containerId)
-            .append("div")
-            .attr('id', 'tooltip-' + uuid())
-            .attr('class', 'vizart-tooltip')
-            .style("opacity", 0);
     }
 
     update() {
@@ -80,47 +75,6 @@ class AbstractChart {
 
     _provideColorScale() {
         return makeColorScale(this._options.color);
-    }
-
-
-    //todo not a nice way to use 'this', need to improve
-    _bindTooltip(_selector, polar = false) {
-        let that = this;
-
-        function _mouseMove(d) {
-            that._tooltip
-                .transition()
-                .duration(that._options.tooltip.duration)
-                .style("opacity", 1);
-
-            let coordinates = mouse(this);
-            let x = coordinates[0];
-            let y = coordinates[1];
-
-            if (polar === true) {
-                that._tooltip.style("left", (x + (that._options.chart.width / 2)) + "px")
-                    .style("top", (y + (that._options.chart.height / 2) +  90) + "px")
-                    .html(that._getTooltipHTML(d));
-            } else {
-                that._tooltip.style("left", x < 40 ? x : (x - 22) + "px")
-                    .style("top", y < 40 ? y + 34 : (y - 34) + "px")
-                    .html( that._getTooltipHTML(d));
-            }
-        };
-
-        function _mouseOut() {
-            that._tooltip.transition()
-                .duration(that._options.tooltip.duration)
-                .style("opacity", 0)
-        }
-
-        _selector
-            .on("mousemove", _mouseMove)
-            .on("mouseout", _mouseOut);
-    }
-
-    _getTooltipHTML(d) {
-        throw new Error('tooltip is not defined in _getTooltipHTML');
     }
 
 }
