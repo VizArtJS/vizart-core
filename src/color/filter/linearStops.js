@@ -3,7 +3,7 @@ import isArray from 'lodash-es/isArray';
 import { scaleSequential } from 'd3-scale';
 import { range } from 'd3-array';
 import { format } from 'd3-format';
-import { equalIntervalBreaks } from 'simple-statistics';
+import equalIntervalBreaks from './equal-interval-breaks';
 
 import interpolatePreset from '../interpolator';
 

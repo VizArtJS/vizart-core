@@ -19,7 +19,7 @@ import isArray from 'lodash-es/isArray';
 import isString from 'lodash-es/isString';
 import map from 'lodash-es/map';
 
-import { ckmeans } from 'simple-statistics';
+import ckmeans from './kmeans';
 
 
 /**
