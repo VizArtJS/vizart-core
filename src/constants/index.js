@@ -1,1 +1,0 @@
-export { default as FieldType } from './field-types';

@@ -1,6 +1,6 @@
 {
   "name": "vizart-core",
-  "version": "0.6.5",
+  "version": "0.6.7",
   "description": "Core Components for VizArt",
   "main": "dist/vizart-core.js",
   "module": "dist/vizart-core.mjs",
@@ -35,7 +35,6 @@
     "d3-time": "^1.0.7",
     "d3-time-format": "^2.0.5",
     "d3-transition": "^1.1.0",
-    "d3-voronoi": "^1.1.2",
     "lodash-es": "^4.17.4"
   },
   "devDependencies": {
