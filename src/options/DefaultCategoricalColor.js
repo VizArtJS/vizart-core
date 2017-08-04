@@ -1,3 +1,5 @@
+import Globals from '../base/Globals';
+
 const DefaultCategoricalColor = {
     scheme: ['#3b73b9',
         '#aa71aa',
@@ -15,7 +17,7 @@ const DefaultCategoricalColor = {
         '#a7a9ac',
         '#bbbb42',
         '#e6a6ce'],
-    type: 'categorical'
+    type: Globals.ColorType.CATEGORICAL
 };
 
 export default DefaultCategoricalColor;
