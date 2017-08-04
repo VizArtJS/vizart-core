@@ -1,7 +1,3 @@
-
-
-import interpolatePreset from './interpolator';
-
 import {
     scaleSequential,
     scaleQuantile,
@@ -16,11 +12,8 @@ import isString from 'lodash-es/isString';
 import map from 'lodash-es/map';
 
 import ckmeans from './kmeans';
-
-const GRADIENT = 'gradient';
-const DISTINCT = 'distinct';
-const CATEGORICAL = 'categorical';
-const DIVERGENT = 'divergent';
+import Globals from '../base/Globals';
+import interpolatePreset from './interpolator';
 
 /**
  *
@@ -87,14 +80,14 @@ let makeColorScale = function(colorOptions, _data = []) {
 
         // built-in
         switch (_type) {
-            case GRADIENT:
+            case Globals.ColorType.GRADIENT:
                 _scale = scaleSequential(_internalScale);
 
                 let _extent = extent(_data);
                 _scale.domain(_extent);
                 break;
 
-            case DISTINCT:
+            case Globals.ColorType.DISTINCT:
                 let scaleArr = [];
 
                 for (let d of colorOptions.distinction) {
@@ -112,7 +105,7 @@ let makeColorScale = function(colorOptions, _data = []) {
 
                 break;
 
-            case CATEGORICAL:
+            case Globals.ColorType.CATEGORICAL:
                 _scale = scaleOrdinal(_internalScale);
                 break;
             default:
@@ -122,12 +115,12 @@ let makeColorScale = function(colorOptions, _data = []) {
         }
     } else if (isArray(_scheme)) {
         switch (_type) {
-            case GRADIENT:
+            case Globals.ColorType.GRADIENT:
                 _scale = _smartSequential(_data, _scheme);
 
                 break;
 
-            case DISTINCT:
+            case Globals.ColorType.DISTINCT:
                 _scale = scaleQuantile();
 
                 let _valMap = colorOptions.distinction
@@ -140,7 +133,7 @@ let makeColorScale = function(colorOptions, _data = []) {
                 _scale.range(_scheme);
                 break;
 
-            case CATEGORICAL:
+            case Globals.ColorType.CATEGORICAL:
                 _scale = scaleOrdinal().range(_scheme);
 
                 break;

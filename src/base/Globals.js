@@ -1,9 +1,16 @@
 const Globals = {
-    Type: {
-        Date: 'date',
-        Number: 'number',
-        String: 'string'
+    DataType: {
+        DATE: 'date',
+        NUMBER: 'number',
+        STRING: 'string'
+    },
+
+    ColorType: {
+        GRADIENT: 'gradient',
+        DISTINCT: 'distinct',
+        CATEGORICAL: 'categorical',
+        DIVERGENT: 'divergent'
     }
 }
 
-export default Definition;
+export default Globals;
