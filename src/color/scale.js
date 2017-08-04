@@ -1,8 +1,4 @@
-import {
-    GRADIENT,
-    DISTINCT,
-    CATEGORICAL,
-} from './type';
+
 
 import interpolatePreset from './interpolator';
 
@@ -21,6 +17,10 @@ import map from 'lodash-es/map';
 
 import ckmeans from './kmeans';
 
+const GRADIENT = 'gradient';
+const DISTINCT = 'distinct';
+const CATEGORICAL = 'categorical';
+const DIVERGENT = 'divergent';
 
 /**
  *

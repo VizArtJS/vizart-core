@@ -1,4 +1,3 @@
-export * from './type';
 export * from './scientific';
 export * from './filter';
 export { default as makeColorScale } from './scale';
