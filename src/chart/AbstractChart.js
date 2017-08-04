@@ -24,6 +24,7 @@ class AbstractChart {
         this._options.chart.innerWidth = availableWidth(this._options.chart.width, select(containerId), this._options.chart.margin);
         this._options.chart.innerHeight = availableHeight(this._options.chart.height, select(containerId), this._options.chart.margin);
 
+        this._id = uuid();
         this._data;
         this._colorScale;
     }

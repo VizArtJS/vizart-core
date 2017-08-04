@@ -1,7 +1,7 @@
-let rotateXTicks = function(svg, angle, transition = false) {
+let rotateXTicks = function(_selector, angle, transition = false) {
     let _rotate = "rotate(-" + angle + ")";
 
-    let _tickText = svg.selectAll('.x.axis .tick text');
+    let _tickText = _selector.selectAll('.x.axis .tick text');
 
     if (transition === true) {
         _tickText.transition().duration(300);

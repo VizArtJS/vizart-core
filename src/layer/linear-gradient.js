@@ -1,14 +1,12 @@
-import Duration from '..//util/transition';
-import uuid from '../util/uuid';
-
 import isString from 'lodash-es/isString';
 import isArray from 'lodash-es/isArray';
 import { scaleSequential } from 'd3-scale';
 import { range } from 'd3-array';
 import { format } from 'd3-format';
 import { equalIntervalBreaks } from 'simple-statistics';
-import { select } from 'd3-selection';
 
+import Duration from '..//util/transition';
+import uuid from '../util/uuid';
 import interpolatePreset from '../color/interpolator';
 
 let formatter = format(".0%");
