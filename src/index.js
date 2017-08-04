@@ -5,7 +5,6 @@ export * from './color';
 export * from './interpolator';
 export * from './layer';
 export * from './options';
-export * from './scale';
 export * from './util';
 export * from './chart';
 export * from './constants';
