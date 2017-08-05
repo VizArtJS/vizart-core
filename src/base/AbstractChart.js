@@ -1,4 +1,5 @@
 import { select } from 'd3-selection';
+import { dispatch } from 'd3-dispatch';
 import 'd3-transition';
 
 import check from '../util/check';
@@ -26,13 +27,14 @@ class AbstractChart {
 
         this._id = uuid();
         this._data;
-        this._colorScale;
+        this._color;
+        this._listeners = dispatch();
     }
 
 
     render(_data) {
         this.data(_data);
-        this._colorScale = this._provideColorScale();
+        this._color = this._provideColor();
 
         this._container = select(this._containerId).append("svg")
             .attr("width", this._options.chart.width)
@@ -44,8 +46,12 @@ class AbstractChart {
 
     }
 
+    on(_name, _callback) {
+        this._listeners.on(_name, _callback);
+    }
+
     update() {
-        this._colorScale = this._provideColorScale();
+        this._color = this._provideColor();
     }
 
     data(_data) {
@@ -71,10 +77,10 @@ class AbstractChart {
 
     transitionColor(colorOptions) {
         this._options.color = colorOptions;
-        this._colorScale = this._provideColorScale();
+        this._color = this._provideColor();
     };
 
-    _provideColorScale() {
+    _provideColor() {
         return makeColorScale(this._options.color);
     }
 
