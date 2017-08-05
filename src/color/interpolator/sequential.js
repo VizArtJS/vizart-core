@@ -30,121 +30,91 @@ import {
     interpolateCubehelixDefault,
 } from 'd3-scale';
 
-// Sequential (Single Hue)
-const Blues = 'Blues';
-const Greens = 'Greens';
-const Greys = 'Greys';
-const Oranges = 'Oranges';
-const Purples = 'Purples';
-const Reds = 'Reds';
+import Sequential from '../preset/sequential';
 
-
-// Sequential (Multi-Hue)
-const BuGn = 'BuGn';
-const BuPu = 'BuPu';
-const GnBu = 'GnBu';
-const OrRd = 'OrRd';
-const PuBuGn = 'PuBuGn';
-const PuBu = 'PuBu';
-const PuRd = 'PuRd';
-const RdPu = 'RdPu';
-const YlGnBu = 'YlGnBu';
-const YlGn = 'YlGn';
-const YlOrBr = 'YlOrBr';
-const YlOrRd = 'YlOrRd';
-
-const Viridis = 'Viridis';
-const Inferno = 'Inferno';
-const Magma = 'Magma';
-const Plasma = 'Plasma';
-const Warm = 'Warm';
-const Cool = 'Cool';
-const Rainbow = 'Rainbow';
-const Cubehelix = 'Cubehelix';
 
 let interpolateSequential = function(_name) {
     switch(_name) {
 
-
         // sequential single hue
-        case Blues:
+        case Sequential.Blues:
             return interpolateBlues;
 
-        case Greens:
+        case Sequential.Greens:
             return interpolateGreens;
 
-        case Greys:
+        case Sequential.Greys:
             return interpolateGreys;
 
-        case Oranges:
+        case Sequential.Oranges:
             return interpolateOranges;
 
-        case Reds:
+        case Sequential.Reds:
             return interpolateReds;
 
-        case Purples:
+        case Sequential.Purples:
             return interpolatePurples;
 
         // Sequential (Multi-Hue)
-        case BuGn:
+        case Sequential.BuGn:
             return interpolateBuGn;
 
-        case BuPu:
+        case Sequential.BuPu:
             return interpolateBuPu;
 
-        case GnBu:
+        case Sequential.GnBu:
             return interpolateGnBu;
 
-        case OrRd:
+        case Sequential.OrRd:
             return interpolateOrRd;
 
-        case PuBuGn:
+        case Sequential.PuBuGn:
             return interpolatePuBuGn;
 
-        case PuBu:
+        case Sequential.PuBu:
             return interpolatePuBu;
 
-        case PuRd:
+        case Sequential.PuRd:
             return interpolatePuRd;
 
-        case RdPu:
+        case Sequential.RdPu:
             return interpolateRdPu;
 
-        case YlGnBu:
+        case Sequential.YlGnBu:
             return interpolateYlGnBu;
 
-        case YlGn:
+        case Sequential.YlGn:
             return interpolateYlGn;
 
-        case YlOrBr:
+        case Sequential.YlOrBr:
             return interpolateYlOrBr;
 
-        case YlOrRd:
+        case Sequential.YlOrRd:
             return interpolateYlOrRd;
 
         // R Color
-        case Viridis:
+        case Sequential.Viridis:
             return interpolateViridis;
 
-        case Inferno:
+        case Sequential.Inferno:
             return interpolateInferno;
 
-        case Magma:
+        case Sequential.Magma:
             return interpolateMagma;
 
-        case Plasma:
+        case Sequential.Plasma:
             return interpolatePlasma;
 
-        case Warm:
+        case Sequential.Warm:
             return interpolateWarm;
 
-        case Cool:
+        case Sequential.Cool:
             return interpolateCool;
 
-        case Rainbow:
+        case Sequential.Rainbow:
             return interpolateRainbow;
 
-        case Cubehelix:
+        case Sequential.Cubehelix:
             return interpolateCubehelixDefault;
 
         default:

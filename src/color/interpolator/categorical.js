@@ -17,60 +17,48 @@ import {
 } from 'd3-scale';
 
 
-// Categorical
-const Accent = 'Accent';
-const Dark2 = 'Dark2';
-const Paired = 'Paired';
-const Pastel1 = 'Pastel1';
-const Pastel2 = 'Pastel2';
-const Set1 = 'Set1';
-const Set2 = 'Set2';
-const Set3 = 'Set3';
+import Categorical from '../preset/categorical';
 
-const Category10 = 'Category10';
-const Category20 = 'Category20';
-const Category20b = 'Category20b';
-const Category20c = 'Category20c';
 
 let interpolateCategorical = function(_name) {
     switch (_name) {
         // categorical
-        case Accent:
+        case Categorical.Accent:
             return schemeAccent;
 
-        case Dark2:
+        case Categorical.Dark2:
             return schemeDark2;
 
-        case Paired:
+        case Categorical.Paired:
             return schemePaired;
 
-        case Pastel1:
+        case Categorical.Pastel1:
             return schemePastel1;
 
-        case Pastel2:
+        case Categorical.Pastel2:
             return schemePastel2;
 
-        case Set1:
+        case Categorical.Set1:
             return schemeSet1;
 
-        case Set2:
+        case Categorical.Set2:
             return schemeSet2;
 
-        case Set3:
+        case Categorical.Set3:
             return schemeSet3;
 
 
         // categorical
-        case Category10:
+        case Categorical.Category10:
             return schemeCategory10;
 
-        case Category20:
+        case Categorical.Category20:
             return schemeCategory20;
 
-        case Category20b:
+        case Categorical.Category20b:
             return schemeCategory20b;
 
-        case Category20c:
+        case Categorical.Category20c:
             return schemeCategory20c;
 
         default:

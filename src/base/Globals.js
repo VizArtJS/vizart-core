@@ -10,7 +10,9 @@ const Globals = {
         DISTINCT: 'distinct',
         CATEGORICAL: 'categorical',
         DIVERGENT: 'divergent'
-    }
+    },
+
+
 }
 
 export default Globals;
