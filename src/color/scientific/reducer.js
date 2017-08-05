@@ -1,6 +1,7 @@
+import merge from 'lodash-es/merge';
 import HclSelector from './util/HclSelector';
 import { generate } from './palette-gen';
-import merge from 'lodash-es/merge';
+
 
 const DefaultOpt = {
     quality: 50,

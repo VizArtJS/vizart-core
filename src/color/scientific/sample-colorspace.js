@@ -1,5 +1,5 @@
-import { validateLab } from './palette-gen';
 import chroma from 'chroma-js';
+import { validateLab } from './palette-gen';
 
 const lstep = 3;
 const astep = 8;

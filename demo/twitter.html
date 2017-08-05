@@ -27,10 +27,10 @@
     $(document).ready(function () {
 
 
-        let palette = VizArtCore.reduceToPalette(20, VizArtCore.AllColors, {
+        let palette = VizArtCore.reduceToPalette(20, VizArtCore.ColorPreset.Hcl.AllColors, {
             colorblind: false
         });
-        let _selector = new VizArtCore.HclSelector(VizArtCore.AllColors);
+        let _selector = new VizArtCore.HclSelector(VizArtCore.ColorPreset.Hcl.AllColors);
         let subspaceSamples = VizArtCore.getSubColorSpace(palette, function (c) {
             return _selector.validate(c.hcl);
         });
