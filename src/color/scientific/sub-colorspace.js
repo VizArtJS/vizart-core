@@ -4,11 +4,7 @@ import selectColorSpace from './select-colorspace';
 const getSubColorSpace = (colors, _selector = (c)=> {return true;}, distanceType = 'Default') => {
     let subspaceSamples = selectColorSpace(_selector);
 
-    let matchings = {};
-
-    for (let c of colors) {
-        matchings[c.hex] = [];
-    }
+    let matchings = colors.reduce((match, d)=> { match[d.hex] = []}, {});
 
     for (let color of subspaceSamples) {
         let lab = color.lab();
