@@ -27,7 +27,7 @@ const reduceToPalette = (_count, preset, _opt = DefaultOpt)=>{
     // Generate colors
     let colors = generate(_count, paletteSelector, useFV, q, precision, dType);
 
-    return colors.map((color) => {
+    return colors.map(color => {
         return {
             color: color,
             hex: color.hex(),

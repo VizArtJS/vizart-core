@@ -10,7 +10,7 @@ const sampleColorSpace = ()=> {
     let colorSamples = [];
     let colorsIndex = {};
 
-    function sampleColor(lab) {
+    const sampleColor =(lab)=> {
         // Test if color exists in lab space
         if (validateLab(lab)) {
             let color = chroma.lab(lab)

@@ -22,7 +22,7 @@ const numericSort =(x /*: Array<number> */)=> /*: Array<number> */ {
         // ensure the array is not changed in-place
         .slice()
         // comparator function that treats input as numeric
-        .sort(function(a, b) {
+        .sort((a, b)=> {
             return a - b;
         });
 }
