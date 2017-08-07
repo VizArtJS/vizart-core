@@ -35,8 +35,13 @@ npm run test:cover  // run tests and view coverage report
 
 ## API
 ### Color
+#### Scientific Color
 #### Preset
-use a color preset
+1. Sequential
+2. Categorical
+3. Divergent
+4. Others
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
