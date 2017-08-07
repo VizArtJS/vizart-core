@@ -35,15 +35,19 @@ npm run test:cover  // run tests and view coverage report
 
 ## API
 * [Color](#color)
+  * [Generator](#generator)
   * [Preset](#preset)
     * [Sequential: Single Hue](#sequential-single-hue)
     * [Sequential: Multi Hue](#sequential-multi-hue)
     * [Categorical](#categorical)
     * [Divergent](#divergent)
+    * [Generic Scheme](#generic-scheme)
     
 ### Color
-#### Scientific Color
-Color tool that is based on [IWantHue](http://tools.medialab.sciences-po.fr/iwanthue/) and [Chroma](https://github.com/gka/chroma.js/)
+#### Generator
+Generate a color palette in HCL namespace. In the palette, each color has a sub-colorspace.
+
+> Credits: This is based on [IWantHue](http://tools.medialab.sciences-po.fr/iwanthue/) and [Chroma](https://github.com/gka/chroma.js/)
 #### Preset
 Color preset for great data visualization color scheme:
 * [ColorBrewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) as well as pre-defined schemes
@@ -238,6 +242,17 @@ const _color = {
 'Spectral'/d3.interpolateSpectral
 <img height="20" width="100%" alt="Spectral" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Spectral.png"> 
 
+
+#### Generic Scheme
+generic are a set of colors that are eligible for both sequential and categorical usage
+##### Metropolis
+MetroCold3
+MetroCold4
+MetroCold5
+MetroDawn3
+MetroDawn4
+MetroRain3
+MetroRain8
 
 ## License
 
