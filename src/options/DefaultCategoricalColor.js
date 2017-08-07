@@ -1,5 +1,5 @@
 import Globals from '../base/Globals';
-import MetroRain8 from '../color/preset/metropolis';
+import { MetroRain8 } from '../color/preset/metropolis';
 
 const DefaultCategoricalColor = {
     scheme: MetroRain8,

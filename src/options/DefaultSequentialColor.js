@@ -1,5 +1,5 @@
 import Globals from '../base/Globals';
-import MetroCold3 from '../color/preset/metropolis';
+import { MetroCold3 } from '../color/preset/metropolis';
 
 const DefaultSequentialColor = {
     scheme: MetroCold3,

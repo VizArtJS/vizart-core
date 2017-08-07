@@ -21,42 +21,42 @@ import * as Preset from '../preset/categorical';
 const _mapScheme = (_scheme) => {
     switch (_scheme) {
         // categorical
-        case Preset.Accent:
+        case Preset.SchemeAccent:
             return schemeAccent;
 
-        case Preset.Dark2:
+        case Preset.SchemeDark2:
             return schemeDark2;
 
-        case Preset.Paired:
+        case Preset.SchemePaired:
             return schemePaired;
 
-        case Preset.Pastel1:
+        case Preset.SchemePastel1:
             return schemePastel1;
 
-        case Preset.Pastel2:
+        case Preset.SchemePastel2:
             return schemePastel2;
 
-        case Preset.Set1:
+        case Preset.SchemeSet1:
             return schemeSet1;
 
-        case Preset.Set2:
+        case Preset.SchemeSet2:
             return schemeSet2;
 
-        case Preset.Set3:
+        case Preset.SchemeSet3:
             return schemeSet3;
 
 
         // categorical
-        case Preset.Category10:
+        case Preset.SchemeCategory10:
             return schemeCategory10;
 
-        case Preset.Category20:
+        case Preset.SchemeCategory20:
             return schemeCategory20;
 
-        case Preset.Category20b:
+        case Preset.SchemeCategory20b:
             return schemeCategory20b;
 
-        case Preset.Category20c:
+        case Preset.SchemeCategory20c:
             return schemeCategory20c;
 
         default:
