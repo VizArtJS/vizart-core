@@ -33,7 +33,10 @@ npm run test        // run tests only
 npm run test:cover  // run tests and view coverage report
 ```
 
-
+## API
+### Color
+#### Preset
+use a color preset
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
