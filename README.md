@@ -193,16 +193,16 @@ const _color = {
 <img height="20" width="100%" alt="Set3" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set3.png"> 
 ##### SchemeCategory10
 'Category10'/d3.schemeCategory10
-<img height="20" width="100%" alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category10.png"> 
+<img height="20" width="100%" alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category10.png"> 
 ##### SchemeCategory20
 'Category20'/d3.schemeCategory20
-<img height="20" width="100%" alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20.png"> 
+<img height="20" width="100%" alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20.png"> 
 ##### SchemeCategory20b
 'Category20b'/d3.schemeCategory20b
-<img height="20" width="100%" alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20b.png"> 
+<img height="20" width="100%" alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20b.png"> 
 ##### SchemeCategory20c
 'Category20c'/d3.schemeCategory20c
-<img height="20" width="100%" alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20c.png"> 
+<img height="20" width="100%" alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20c.png"> 
 
 #### Divergent
 ##### SchemeBrBG
@@ -233,9 +233,6 @@ const _color = {
 'Spectral'/d3.interpolateSpectral
 <img height="20" width="100%" alt="Spectral" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Spectral.png"> 
 
-2. Categorical
-3. Divergent
-Built-in 
 
 ## License
 
