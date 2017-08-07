@@ -83,7 +83,7 @@ const _color = {
 ```
 
 
-1. Sequential
+#### Sequential (Single Hue)
 
 ##### SchemeReds
 'Reds'/d3.interpolateReds
@@ -103,6 +103,8 @@ const _color = {
 ##### SchemePurples
 'Purples'/d3.interpolatePurples
 <img height="20" width="100%" alt="Purples" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Purples.png"> 
+
+#### Sequential (Multi Hue)
 ##### SchemeBuGn
 'BuGn'/d3.interpolateBuGn
 <img height="20" width="100%" alt="BuGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BuGn.png"> 
@@ -163,42 +165,46 @@ const _color = {
 ##### SchemeCubehelix
 'Cubehelix'/d3.interpolateCubehelix
 <img height="20" width="100%" alt="Cubehelix" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cubehelix.png"> 
+
+#### Categorical
 ##### SchemeAccent
-'Accent'/d3.interpolateAccent
+'Accent'/d3.schemeAccent
 <img height="20" width="100%" alt="Accent" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Accent.png"> 
 ##### SchemeDark2
-'Dark2'/d3.interpolateDark2
+'Dark2'/d3.schemeDark2
 <img height="20" width="100%" alt="Dark2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Dark2.png"> 
 ##### SchemePaired
-'Paired'/d3.interpolatePaired
+'Paired'/d3.schemePaired
 <img height="20" width="100%" alt="Paired" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Paired.png"> 
 ##### SchemePastel1
-'Pastel1'/d3.interpolatePastel1
+'Pastel1'/d3.schemePastel1
 <img height="20" width="100%" alt="Pastel1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel1.png"> 
 ##### SchemePastel2
-'Pastel2'/d3.interpolatePastel2
+'Pastel2'/d3.schemePastel2
 <img height="20" width="100%" alt="Pastel2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel2.png"> 
 ##### SchemeSet1
-'Set1'/d3.interpolateSet1
+'Set1'/d3.schemeSet1
 <img height="20" width="100%" alt="Set1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set1.png"> 
 ##### SchemeSet2
-'Set2'/d3.interpolateSet2
+'Set2'/d3.schemeSet2
 <img height="20" width="100%" alt="Set2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set2.png"> 
 ##### SchemeSet3
-'Set3'/d3.interpolateSet3
+'Set3'/d3.schemeSet3
 <img height="20" width="100%" alt="Set3" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set3.png"> 
 ##### SchemeCategory10
-'Category10'/d3.interpolateCategory10
+'Category10'/d3.schemeCategory10
 <img height="20" width="100%" alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category10.png"> 
 ##### SchemeCategory20
-'Category20'/d3.interpolateCategory20
+'Category20'/d3.schemeCategory20
 <img height="20" width="100%" alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20.png"> 
 ##### SchemeCategory20b
-'Category20b'/d3.interpolateCategory20b
+'Category20b'/d3.schemeCategory20b
 <img height="20" width="100%" alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20b.png"> 
 ##### SchemeCategory20c
-'Category20c'/d3.interpolateCategory20c
+'Category20c'/d3.schemeCategory20c
 <img height="20" width="100%" alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20c.png"> 
+
+#### Divergent
 ##### SchemeBrBG
 'BrBG'/d3.interpolateBrBG
 <img height="20" width="100%" alt="BrBG" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BrBG.png"> 
