@@ -5,6 +5,7 @@ import {
     interpolateQuantile,
     interpolateCategorical
 } from '../interpolator/index';
+import Globals from '../../base/Globals';
 
 const _builtInScale = (_color, _data)=> {
     let _type = _color.type;

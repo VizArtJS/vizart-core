@@ -1,6 +1,6 @@
 {
   "name": "vizart-core",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "Core Components for VizArt",
   "main": "dist/vizart-core.js",
   "module": "dist/vizart-core.mjs",
