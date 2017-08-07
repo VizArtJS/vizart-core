@@ -153,12 +153,12 @@ const interpolateSequentialScheme = (_scheme, _num = 2)=> {
 
 const interpolateSequential = (_scheme)=> scaleSequential(_mapScheme(_scheme));
 
-const interpolateQuantile = (_scheme, _distinction = [0, 0.5, 1])=> {
+const interpolateQuantile = (_scheme, _distinction = [0, 0.33, 0.66, 1])=> {
     if (_distinction.length < 3) {
-        console.log('distinction  must contains at least 3 elements, [0, 0.5, 1] will be used by default')
+        console.log('distinction  must contains at least 3 elements, [0, 0.33, 0.66, 1] will be used by default')
     }
 
-    const _break = _distinction.length < 3 ? [0, 0.5, 1] : _distinction;
+    const _break = _distinction.length < 3 ? [0, 0.33, 0.66, 1] : _distinction;
 
     const _standardize = scaleLinear().domain(extent(_break)).range(0,1);
     const _color = scaleSequential(_mapScheme(_scheme)).domain(0, 1);
