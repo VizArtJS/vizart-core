@@ -35,6 +35,8 @@ npm run test:cover  // run tests and view coverage report
 
 ## API
 * [Color](#color)
+  * [Preset](#preset)
+    * [Sequential: Single Hue](#sequential-single-hue)
 
 ### Color
 #### Scientific Color
