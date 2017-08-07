@@ -87,146 +87,145 @@ const _color = {
 
 ##### SchemeReds
 'Reds'/d3.interpolateReds
-<img height="20" width="100%"alt="Reds" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Reds.png"> 
+<img height="20" width="100%" alt="Reds" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Reds.png"> 
 ##### SchemeBlues
 'Blues'/d3.interpolateBlues
-<img height="20" width="100%"alt="Blues" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Blues.png"> 
+<img height="20" width="100%" alt="Blues" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Blues.png"> 
 ##### SchemeGreens
 'Greens'/d3.interpolateGreens
-<img height="20" width="100%"alt="Greens" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Greens.png"> 
+<img height="20" width="100%" alt="Greens" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Greens.png"> 
 ##### SchemeGreys
 'Greys'/d3.interpolateGreys
-<img height="20" width="100%"alt="Greys" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Greys.png"> 
+<img height="20" width="100%" alt="Greys" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Greys.png"> 
 ##### SchemeOranges
 'Oranges'/d3.interpolateOranges
-<img height="20" width="100%"alt="Oranges" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Oranges.png"> 
+<img height="20" width="100%" alt="Oranges" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Oranges.png"> 
 ##### SchemePurples
 'Purples'/d3.interpolatePurples
-<img height="20" width="100%"alt="Purples" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Purples.png"> 
+<img height="20" width="100%" alt="Purples" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Purples.png"> 
 ##### SchemeBuGn
 'BuGn'/d3.interpolateBuGn
-<img height="20" width="100%"alt="BuGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BuGn.png"> 
+<img height="20" width="100%" alt="BuGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BuGn.png"> 
 ##### SchemeBuPu
 'BuPu'/d3.interpolateBuPu
-<img height="20" width="100%"alt="BuPu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BuPu.png"> 
+<img height="20" width="100%" alt="BuPu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BuPu.png"> 
 ##### SchemeGnBu
 'GnBu'/d3.interpolateGnBu
-<img height="20" width="100%"alt="GnBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/GnBu.png"> 
+<img height="20" width="100%" alt="GnBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/GnBu.png"> 
 ##### SchemeOrRd
 'OrRd'/d3.interpolateOrRd
-<img height="20" width="100%"alt="OrRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/OrRd.png"> 
+<img height="20" width="100%" alt="OrRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/OrRd.png"> 
 ##### SchemePuBuGn
 'PuBuGn'/d3.interpolatePuBuGn
-<img height="20" width="100%"alt="PuBuGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuBuGn.png"> 
+<img height="20" width="100%" alt="PuBuGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuBuGn.png"> 
 ##### SchemePuBu
 'PuBu'/d3.interpolatePuBu
-<img height="20" width="100%"alt="PuBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuBu.png"> 
+<img height="20" width="100%" alt="PuBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuBu.png"> 
 ##### SchemePuRd
 'PuRd'/d3.interpolatePuRd
-<img height="20" width="100%"alt="PuRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuRd.png"> 
+<img height="20" width="100%" alt="PuRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuRd.png"> 
 ##### SchemeRdPu
 'RdPu'/d3.interpolateRdPu
-<img height="20" width="100%"alt="RdPu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdPu.png"> 
+<img height="20" width="100%" alt="RdPu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdPu.png"> 
 ##### SchemeYlGnBu
 'YlGnBu'/d3.interpolateYlGnBu
-<img height="20" width="100%"alt="YlGnBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlGnBu.png"> 
+<img height="20" width="100%" alt="YlGnBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlGnBu.png"> 
 ##### SchemeYlGn
 'YlGn'/d3.interpolateYlGn
-<img height="20" width="100%"alt="YlGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlGn.png"> 
+<img height="20" width="100%" alt="YlGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlGn.png"> 
 ##### SchemeYlOrBr
 'YlOrBr'/d3.interpolateYlOrBr
-<img height="20" width="100%"alt="YlOrBr" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlOrBr.png"> 
+<img height="20" width="100%" alt="YlOrBr" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlOrBr.png"> 
 ##### SchemeYlOrRd
 'YlOrRd'/d3.interpolateYlOrRd
-<img height="20" width="100%"alt="YlOrRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlOrRd.png"> 
+<img height="20" width="100%" alt="YlOrRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlOrRd.png"> 
 ##### SchemeViridis
 'Viridis'/d3.interpolateViridis
-<img height="20" width="100%"alt="Viridis" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Viridis.png"> 
+<img height="20" width="100%" alt="Viridis" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Viridis.png"> 
 ##### SchemeInferno
 'Inferno'/d3.interpolateInferno
-<img height="20" width="100%"alt="Inferno" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Inferno.png"> 
+<img height="20" width="100%" alt="Inferno" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Inferno.png"> 
 ##### SchemeMagma
 'Magma'/d3.interpolateMagma
-<img height="20" width="100%"alt="Magma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Magma.png"> 
+<img height="20" width="100%" alt="Magma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Magma.png"> 
 ##### SchemePlasma
 'Plasma'/d3.interpolatePlasma
-<img height="20" width="100%"alt="Plasma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Plasma.png"> 
+<img height="20" width="100%" alt="Plasma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Plasma.png"> 
 ##### SchemeWarm
 'Warm'/d3.interpolateWarm
-<img height="20" width="100%"alt="Warm" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Warm.png"> 
+<img height="20" width="100%" alt="Warm" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Warm.png"> 
 ##### SchemeCool
 'Cool'/d3.interpolateCool
-<img height="20" width="100%"alt="Cool" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cool.png"> 
+<img height="20" width="100%" alt="Cool" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cool.png"> 
 ##### SchemeRainbow
 'Rainbow'/d3.interpolateRainbow
-<img height="20" width="100%"alt="Rainbow" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Rainbow.png"> 
+<img height="20" width="100%" alt="Rainbow" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Rainbow.png"> 
 ##### SchemeCubehelix
 'Cubehelix'/d3.interpolateCubehelix
-<img height="20" width="100%"alt="Cubehelix" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cubehelix.png"> 
+<img height="20" width="100%" alt="Cubehelix" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cubehelix.png"> 
 ##### SchemeAccent
 'Accent'/d3.interpolateAccent
-<img height="20" width="100%"alt="Accent" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Accent.png"> 
+<img height="20" width="100%" alt="Accent" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Accent.png"> 
 ##### SchemeDark2
 'Dark2'/d3.interpolateDark2
-<img height="20" width="100%"alt="Dark2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Dark2.png"> 
+<img height="20" width="100%" alt="Dark2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Dark2.png"> 
 ##### SchemePaired
 'Paired'/d3.interpolatePaired
-<img height="20" width="100%"alt="Paired" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Paired.png"> 
+<img height="20" width="100%" alt="Paired" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Paired.png"> 
 ##### SchemePastel1
 'Pastel1'/d3.interpolatePastel1
-<img height="20" width="100%"alt="Pastel1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel1.png"> 
+<img height="20" width="100%" alt="Pastel1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel1.png"> 
 ##### SchemePastel2
 'Pastel2'/d3.interpolatePastel2
-<img height="20" width="100%"alt="Pastel2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel2.png"> 
+<img height="20" width="100%" alt="Pastel2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Pastel2.png"> 
 ##### SchemeSet1
 'Set1'/d3.interpolateSet1
-<img height="20" width="100%"alt="Set1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set1.png"> 
+<img height="20" width="100%" alt="Set1" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set1.png"> 
 ##### SchemeSet2
 'Set2'/d3.interpolateSet2
-<img height="20" width="100%"alt="Set2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set2.png"> 
+<img height="20" width="100%" alt="Set2" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set2.png"> 
 ##### SchemeSet3
 'Set3'/d3.interpolateSet3
-<img height="20" width="100%"alt="Set3" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set3.png"> 
+<img height="20" width="100%" alt="Set3" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Set3.png"> 
 ##### SchemeCategory10
 'Category10'/d3.interpolateCategory10
-<img height="20" width="100%"alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category10.png"> 
+<img height="20" width="100%" alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category10.png"> 
 ##### SchemeCategory20
 'Category20'/d3.interpolateCategory20
-<img height="20" width="100%"alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20.png"> 
+<img height="20" width="100%" alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20.png"> 
 ##### SchemeCategory20b
 'Category20b'/d3.interpolateCategory20b
-<img height="20" width="100%"alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20b.png"> 
+<img height="20" width="100%" alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20b.png"> 
 ##### SchemeCategory20c
 'Category20c'/d3.interpolateCategory20c
-<img height="20" width="100%"alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20c.png"> 
+<img height="20" width="100%" alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Category20c.png"> 
 ##### SchemeBrBG
 'BrBG'/d3.interpolateBrBG
-<img height="20" width="100%"alt="BrBG" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BrBG.png"> 
+<img height="20" width="100%" alt="BrBG" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/BrBG.png"> 
 ##### SchemePRGn
 'PRGn'/d3.interpolatePRGn
-<img height="20" width="100%"alt="PRGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PRGn.png"> 
+<img height="20" width="100%" alt="PRGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PRGn.png"> 
 ##### SchemePiYG
 'PiYG'/d3.interpolatePiYG
-<img height="20" width="100%"alt="PiYG" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PiYG.png"> 
+<img height="20" width="100%" alt="PiYG" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PiYG.png"> 
 ##### SchemePuOr
 'PuOr'/d3.interpolatePuOr
-<img height="20" width="100%"alt="PuOr" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuOr.png"> 
+<img height="20" width="100%" alt="PuOr" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/PuOr.png"> 
 ##### SchemeRdBu
 'RdBu'/d3.interpolateRdBu
-<img height="20" width="100%"alt="RdBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdBu.png"> 
+<img height="20" width="100%" alt="RdBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdBu.png"> 
 ##### SchemeRdGy
 'RdGy'/d3.interpolateRdGy
-<img height="20" width="100%"alt="RdGy" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdGy.png"> 
+<img height="20" width="100%" alt="RdGy" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdGy.png"> 
 ##### SchemeRdYlBu
 'RdYlBu'/d3.interpolateRdYlBu
-<img height="20" width="100%"alt="RdYlBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdYlBu.png"> 
+<img height="20" width="100%" alt="RdYlBu" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdYlBu.png"> 
 ##### SchemeRdYlGn
 'RdYlGn'/d3.interpolateRdYlGn
-<img height="20" width="100%"alt="RdYlGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdYlGn.png"> 
+<img height="20" width="100%" alt="RdYlGn" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/RdYlGn.png"> 
 ##### SchemeSpectral
 'Spectral'/d3.interpolateSpectral
-<img height="20" width="100%"alt="Spectral" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Spectral.png"> 
-
+<img height="20" width="100%" alt="Spectral" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Spectral.png"> 
 
 2. Categorical
 3. Divergent
