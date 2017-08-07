@@ -1,7 +1,8 @@
 // cold, dark metropolis
 
 
-export const MetroCold3 = ['#1bcebf',
+export const MetroCold3 = [
+    '#1bcebf',
     '#1572ca',
     '#5f26c1',];
 
