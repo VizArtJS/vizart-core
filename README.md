@@ -143,28 +143,28 @@ const _color = {
 <img height="20" width="100%" alt="YlOrRd" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/YlOrRd.png"> 
 ##### SchemeViridis
 'Viridis'/d3.interpolateViridis
-<img height="20" width="100%" alt="Viridis" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Viridis.png"> 
+<img height="20" width="100%" alt="Viridis" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/viridis.png"> 
 ##### SchemeInferno
 'Inferno'/d3.interpolateInferno
-<img height="20" width="100%" alt="Inferno" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Inferno.png"> 
+<img height="20" width="100%" alt="Inferno" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/inferno.png"> 
 ##### SchemeMagma
 'Magma'/d3.interpolateMagma
-<img height="20" width="100%" alt="Magma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Magma.png"> 
+<img height="20" width="100%" alt="Magma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/magma.png"> 
 ##### SchemePlasma
 'Plasma'/d3.interpolatePlasma
-<img height="20" width="100%" alt="Plasma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Plasma.png"> 
+<img height="20" width="100%" alt="Plasma" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/plasma.png"> 
 ##### SchemeWarm
 'Warm'/d3.interpolateWarm
-<img height="20" width="100%" alt="Warm" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Warm.png"> 
+<img height="20" width="100%" alt="Warm" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/warm.png"> 
 ##### SchemeCool
 'Cool'/d3.interpolateCool
-<img height="20" width="100%" alt="Cool" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cool.png"> 
+<img height="20" width="100%" alt="Cool" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/cool.png"> 
 ##### SchemeRainbow
 'Rainbow'/d3.interpolateRainbow
-<img height="20" width="100%" alt="Rainbow" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Rainbow.png"> 
+<img height="20" width="100%" alt="Rainbow" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/rainbow.png"> 
 ##### SchemeCubehelix
 'Cubehelix'/d3.interpolateCubehelix
-<img height="20" width="100%" alt="Cubehelix" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/Cubehelix.png"> 
+<img height="20" width="100%" alt="Cubehelix" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/cubehelix.png"> 
 
 #### Categorical
 ##### SchemeAccent
