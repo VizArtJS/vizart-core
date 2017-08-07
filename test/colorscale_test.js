@@ -1,11 +1,11 @@
-import { reduceToPalette, ColorPreset, getSubColorSpace, HclSelector } from '../src/color';
+import { reduceToPalette, getSubColorSpace, HclSelector, IceCube } from '../src/color';
 import { strictEqual } from 'assert';
 
 describe('color scale', () => {
   it('make a gradient scale', () => {
-      let palette = reduceToPalette(6, ColorPreset.Hcl.IceCube);
+      let palette = reduceToPalette(6, IceCube);
       console.log(palette);
-      let _selector = new HclSelector(ColorPreset.Hcl.IceCube);
+      let _selector = new HclSelector(IceCube);
 
 
       let sub = getSubColorSpace(palette, function (c) {

@@ -1,16 +1,12 @@
-const Categorical = {
-    Accent: 'Accent',
-    Dark2: 'Dark2',
-    Paired: 'Paired',
-    Pastel1: 'Pastel1',
-    Pastel2: 'Pastel2',
-    Set1: 'Set1',
-    Set2: 'Set2',
-    Set3: 'Set3',
-    Category10: 'Category10',
-    Category20: 'Category20',
-    Category20b: 'Category20b',
-    Category20c: 'Category20c',
-}
-
-export default Categorical;
+export const SchemeAccent = 'Accent';
+export const SchemeDark2 = 'Dark2';
+export const SchemePaired = 'Paired';
+export const SchemePastel1 = 'Pastel1';
+export const SchemePastel2 = 'Pastel2';
+export const SchemeSet1 = 'Set1';
+export const SchemeSet2 = 'Set2';
+export const SchemeSet3 = 'Set3';
+export const SchemeCategory10 = 'Category10';
+export const SchemeCategory20 = 'Category20';
+export const SchemeCategory20b = 'Category20b';
+export const SchemeCategory20c = 'Category20c';

@@ -1,4 +1,4 @@
-const AllColors = {
+const AllHcl = {
     name: "All colors",
     dark: false,
     clbl: false,
@@ -228,7 +228,7 @@ const PurpleWine = {
 
 
 export {
-    AllColors,
+    AllHcl,
     DefaultColorSpace,
     ColorBlind,
     FancyLight,

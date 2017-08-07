@@ -16,49 +16,47 @@ import {
     schemeCategory20c,
 } from 'd3-scale';
 
+import * as Preset from '../preset/categorical';
 
-import Categorical from '../preset/categorical';
-
-
-let interpolateCategorical = function(_name) {
-    switch (_name) {
+const _mapScheme = (_scheme) => {
+    switch (_scheme) {
         // categorical
-        case Categorical.Accent:
+        case Preset.Accent:
             return schemeAccent;
 
-        case Categorical.Dark2:
+        case Preset.Dark2:
             return schemeDark2;
 
-        case Categorical.Paired:
+        case Preset.Paired:
             return schemePaired;
 
-        case Categorical.Pastel1:
+        case Preset.Pastel1:
             return schemePastel1;
 
-        case Categorical.Pastel2:
+        case Preset.Pastel2:
             return schemePastel2;
 
-        case Categorical.Set1:
+        case Preset.Set1:
             return schemeSet1;
 
-        case Categorical.Set2:
+        case Preset.Set2:
             return schemeSet2;
 
-        case Categorical.Set3:
+        case Preset.Set3:
             return schemeSet3;
 
 
         // categorical
-        case Categorical.Category10:
+        case Preset.Category10:
             return schemeCategory10;
 
-        case Categorical.Category20:
+        case Preset.Category20:
             return schemeCategory20;
 
-        case Categorical.Category20b:
+        case Preset.Category20b:
             return schemeCategory20b;
 
-        case Categorical.Category20c:
+        case Preset.Category20c:
             return schemeCategory20c;
 
         default:
@@ -66,4 +64,10 @@ let interpolateCategorical = function(_name) {
     }
 }
 
-export default interpolateCategorical;
+const interpolateCategorical = (_scheme) => {
+    return scaleOrdinal(_mapScheme(_scheme));
+}
+
+export {
+    interpolateCategorical
+}

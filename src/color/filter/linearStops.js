@@ -1,18 +1,17 @@
+import isFunction from 'lodash-es/isFunction';
 import isString from 'lodash-es/isString';
 import isArray from 'lodash-es/isArray';
-import { scaleSequential } from 'd3-scale';
 import { range } from 'd3-array';
 import { format } from 'd3-format';
 import equalIntervalBreaks from './equal-interval-breaks';
 
-import interpolatePreset from '../interpolator';
+import { interpolateSequential } from '../interpolator';
 
 const formatter = format(".0%");
 
 const linearStops =(scheme)=> {
-    if (isString(scheme)) {
-        let _seqScale = scaleSequential(interpolatePreset(scheme));
-        _seqScale.domain([0, 1]); // explicit domain, not really need to do so
+    if (isString(scheme) || isFunction(scheme)) {
+        const _seqScale = interpolateSequential(scheme).domain([0, 1]); // explicit domain, not really need to do so
 
         let _data = range(0, 1, 0.1);
         _data.push(1); // range is 0-0.9

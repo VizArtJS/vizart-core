@@ -1,5 +1,4 @@
 import {
-    scaleSequential,
     scaleQuantile,
     scaleOrdinal,
     scaleLinear
@@ -8,12 +7,17 @@ import {
 import { extent, max } from 'd3-array';
 
 import isArray from 'lodash-es/isArray';
+import isFunction from 'lodash-es/isFunction';
 import isString from 'lodash-es/isString';
 import map from 'lodash-es/map';
 
 import ckmeans from './kmeans';
 import Globals from '../base/Globals';
-import interpolatePreset from './interpolator';
+import {
+    interpolateSequential,
+    interpolateQuantile,
+    interpolateCategorical
+} from './interpolator';
 
 /**
  *
@@ -23,7 +27,7 @@ import interpolatePreset from './interpolator';
  * @returns {*}
  * @private
  */
-let _smartSequential = function(_data, _scheme) {
+let _smartSequential = function(_scheme, _data) {
     let _scale = scaleLinear();
 
     let schemeLen = _scheme.length;
@@ -59,7 +63,7 @@ let _smartSequential = function(_data, _scheme) {
     } else {
         // use kmeans
         let clusters = ckmeans(_data, schemeLen - 1);
-        let breakpoints = clusters.map((d)=> { return d[d.length - 1]});
+        let breakpoints = clusters.map(d=> d[d.length - 1]);
         let _domain = [_data[0]].concat(breakpoints);
 
         _scale.domain(_domain).range(_scheme);
@@ -68,85 +72,49 @@ let _smartSequential = function(_data, _scheme) {
     return _scale;
 }
 
-
-// todo quantile needs to bee refactored
-let makeColorScale = function(colorOptions, _data = []) {
+let makeColorScale = function(colorOptions, _data) {
     let _type = colorOptions.type;
     let _scheme = colorOptions.scheme;
 
-    let _scale;
-    if (isString(_scheme)) {
-        let _internalScale = interpolatePreset(_scheme);
-
+    if (isFunction(_scheme) || isString(_scheme)) {
         // built-in
         switch (_type) {
             case Globals.ColorType.GRADIENT:
-                _scale = scaleSequential(_internalScale);
-
-                let _extent = extent(_data);
-                _scale.domain(_extent);
-                break;
+                return interpolateSequential(_scheme).domain(extent(_data));
 
             case Globals.ColorType.DISTINCT:
-                let scaleArr = [];
+                let _valMap = _data
+                    ? map(colorOptions.distinction, d=> max(_data) * (+d))
+                    : colorOptions.distinction;
 
-                for (let d of colorOptions.distinction) {
-                    scaleArr.push(_internalScale(d));
-                }
-                _scale = scaleQuantile().range(scaleArr);
-
-                let _valMap = colorOptions.distinction
-                    ? map(colorOptions.distinction, function(d) {
-                        return max(_data) * (+d);
-                    })
-                    : extent(_data);
-
-                _scale.domain(_valMap);
-
-                break;
-
+                return interpolateQuantile(_scheme, colorOptions.distinction).domain(_valMap);
             case Globals.ColorType.CATEGORICAL:
-                _scale = scaleOrdinal(_internalScale);
-                break;
+                return interpolateCategorical(_internalScale);
+
             default:
                 console.log('color type is not supported ' + _type);
-
                 break;
         }
     } else if (isArray(_scheme)) {
         switch (_type) {
             case Globals.ColorType.GRADIENT:
-                _scale = _smartSequential(_data, _scheme);
-
-                break;
+                return _smartSequential(_scheme, _data);
 
             case Globals.ColorType.DISTINCT:
-                _scale = scaleQuantile();
+                let _valMap = _data
+                    ? map(colorOptions.distinction, d=> max(_data) * (+d))
+                    : colorOptions.distinction;
 
-                let _valMap = colorOptions.distinction
-                    ? map(colorOptions.distinction, function(d) {
-                        return max(_data) * (+d);
-                    })
-                    : extent(_data);
-
-                _scale.domain(_valMap);
-                _scale.range(_scheme);
-                break;
+                return scaleQuantile().domain(_valMap).range(_scheme);
 
             case Globals.ColorType.CATEGORICAL:
-                _scale = scaleOrdinal().range(_scheme);
-
-                break;
+                return scaleOrdinal().range(_scheme);
 
             default:
                 console.log('color type is not supported ' + _type);
-
                 break;
         }
     }
-
-
-    return _scale;
 }
 
 export default makeColorScale;

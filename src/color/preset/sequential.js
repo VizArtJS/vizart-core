@@ -1,33 +1,26 @@
-const Sequential = {
-    // single hue
-    Reds: 'Reds',
-    Blues: 'Blues',
-    Greens: 'Greens',
-    Greys: 'Greys',
-    Oranges: 'Oranges',
-    Purples: 'Purples',
-
-    // multi hue
-    BuGn: 'BuGn',
-    BuPu: 'BuPu',
-    GnBu: 'GnBu',
-    OrRd: 'OrRd',
-    PuBuGn: 'PuBuGn',
-    PuBu: 'PuBu',
-    PuRd: 'PuRd',
-    RdPu: 'RdPu',
-    YlGnBu: 'YlGnBu',
-    YlGn: 'YlGn',
-    YlOrBr: 'YlOrBr',
-    YlOrRd: 'YlOrRd',
-    Viridis: 'Viridis',
-    Inferno: 'Inferno',
-    Magma: 'Magma',
-    Plasma: 'Plasma',
-    Warm: 'Warm',
-    Cool: 'Cool',
-    Rainbow: 'Rainbow',
-    Cubehelix: 'Cubehelix'
-}
-
-export default Sequential
+export const SchemeReds = 'Reds';
+export const SchemeBlues = 'Blues';
+export const SchemeGreens = 'Greens';
+export const SchemeGreys = 'Greys';
+export const SchemeOranges = 'Oranges';
+export const SchemePurples = 'Purples';
+export const SchemeBuGn = 'BuGn';
+export const SchemeBuPu = 'BuPu';
+export const SchemeGnBu = 'GnBu';
+export const SchemeOrRd = 'OrRd';
+export const SchemePuBuGn = 'PuBuGn';
+export const SchemePuBu = 'PuBu';
+export const SchemePuRd = 'PuRd';
+export const SchemeRdPu = 'RdPu';
+export const SchemeYlGnBu = 'YlGnBu';
+export const SchemeYlGn = 'YlGn';
+export const SchemeYlOrBr = 'YlOrBr';
+export const SchemeYlOrRd = 'YlOrRd';
+export const SchemeViridis = 'Viridis';
+export const SchemeInferno = 'Inferno';
+export const SchemeMagma = 'Magma';
+export const SchemePlasma = 'Plasma';
+export const SchemeWarm = 'Warm';
+export const SchemeCool = 'Cool';
+export const SchemeRainbow = 'Rainbow';
+export const SchemeCubehelix = 'Cubehelix';
