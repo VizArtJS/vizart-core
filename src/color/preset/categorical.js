@@ -10,3 +10,4 @@ export const SchemeCategory10 = 'Category10';
 export const SchemeCategory20 = 'Category20';
 export const SchemeCategory20b = 'Category20b';
 export const SchemeCategory20c = 'Category20c';
+
