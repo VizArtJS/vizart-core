@@ -1,8 +1,8 @@
 import Globals from '../base/Globals';
-import { MetroRain8 } from '../color/preset/metropolis';
+import { TheMetLight } from '../color/preset/metropolis';
 
 const DefaultCategoricalColor = {
-    scheme: MetroRain8,
+    scheme: TheMetLight,
     type: Globals.ColorType.CATEGORICAL
 };
 
