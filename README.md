@@ -37,7 +37,10 @@ npm run test:cover  // run tests and view coverage report
 * [Color](#color)
   * [Preset](#preset)
     * [Sequential: Single Hue](#sequential-single-hue)
-
+    * [Sequential: Multi Hue](#sequential-multi-hue)
+    * [Categorical](#categorical)
+    * [Divergent](#divergent)
+    
 ### Color
 #### Scientific Color
 Color tool that is based on [IWantHue](http://tools.medialab.sciences-po.fr/iwanthue/) and [Chroma](https://github.com/gka/chroma.js/)
