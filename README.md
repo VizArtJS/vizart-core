@@ -55,7 +55,7 @@ Color preset for great data visualization color scheme:
 
 > Credit: Images of color scales are from [d3-scale](https://github.com/d3/d3-scale) and [d3-chromatic-scale](https://github.com/d3/d3-scale-chromatic/)
 
-Three ways to use a preset:
+Four ways to use a preset:
 1. Standard
 ``` 
 import { SchemeBlues, Globals } from 'vizart-core';
