@@ -1,8 +1,8 @@
 import Globals from '../base/Globals';
-import { MetroCold3 } from '../color/preset/metropolis';
+import { MetroRain3 } from '../color/preset/metropolis';
 
 const DefaultSequentialColor = {
-    scheme: MetroCold3,
+    scheme: MetroRain3,
     type: Globals.ColorType.GRADIENT,
 };
 
