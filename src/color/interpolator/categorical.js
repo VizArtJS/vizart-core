@@ -14,6 +14,7 @@ import {
     schemeCategory20,
     schemeCategory20b,
     schemeCategory20c,
+    scaleOrdinal
 } from 'd3-scale';
 
 import * as Preset from '../preset/categorical';
