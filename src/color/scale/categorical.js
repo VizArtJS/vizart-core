@@ -28,15 +28,15 @@ const categoricalColor = (scheme, _num = 0)=> {
         // warn('12 will be used by default');
 
     if (isString(_scheme)) {
-        let _colors = interpolateCategoricalScheme(_scheme)
+        let colorSet = interpolateCategoricalScheme(_scheme)
             || interpolateSequentialScheme(_scheme)
             || interpolateDivergentScheme(_scheme);
 
-        if (_colors != null) {
-            if (isArray(colors)) {
-                return scaleOrdinal().range(_colors);
+        if (colorSet != null) {
+            if (isArray(colorSet)) {
+                return scaleOrdinal().range(colorSet);
             } else {
-                return scaleOrdinal().range(_selectFromScheme(colors, selectNum));
+                return scaleOrdinal().range(_selectFromScheme(colorSet, selectNum));
             }
         } else {
             return scaleOrdinal().range(MetroRain8);

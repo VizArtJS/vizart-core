@@ -1,4 +1,5 @@
 import map from 'lodash-es/map';
+import { max } from 'd3-array';
 
 import Globals from '../../base/Globals';
 
