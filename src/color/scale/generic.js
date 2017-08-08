@@ -1,9 +1,13 @@
+import map from 'lodash-es/map';
+
 import Globals from '../../base/Globals';
 
 import gradientColor from './gradient';
 import distinctColor from './distinct';
 import divergentColor from './divergent';
 import categoricalColor from './categorical';
+
+import { warn } from '../../util/logger';
 
 const genericColor = (_color, _data)=> {
     let _scheme = _color.scheme;
