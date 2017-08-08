@@ -11,8 +11,14 @@ import { warn } from '../../util/logger';
 import { MetroRain8 } from '../preset/metropolis';
 
 const _selectFromScheme =(interpolator, num)=> {
-    let linear = scaleSequential(interpolator).domain[0, num - 1];
-    return range(0, num, 1).map(d=> linear(d));
+    const scale = scaleSequential(interpolator);
+
+    if (num <= 1) {
+        return scale(1)
+    } else {
+        //https://github.com/d3/d3-array#range
+        return range(num).map(d=> scale(d/ (num - 1)));
+    }
 }
 
 const categoricalColor = (scheme, _num = 0)=> {
@@ -23,7 +29,7 @@ const categoricalColor = (scheme, _num = 0)=> {
         _scheme = MetroRain8;
     }
 
-    let selectNum = _num <=1 ? _num : 12;
+    let selectNum = _num <=1 ? 12 : _num;
         // warn('categorical number is invalid: should be larger than 0');
         // warn('12 will be used by default');
 
