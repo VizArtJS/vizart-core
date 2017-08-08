@@ -7,6 +7,7 @@ import interpolateCategoricalScheme from '../interpolator/categorical';
 import interpolateSequentialScheme from '../interpolator/sequential';
 import interpolateDivergentScheme from '../interpolator/divergent';
 
+import { warn } from '../../util/logger';
 import { MetroRain8 } from '../preset/metropolis';
 
 const _selectFromScheme =(interpolator, num)=> {
