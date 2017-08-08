@@ -6,12 +6,7 @@ import check from '../util/check';
 import uuid from '../util/uuid';
 import mobileAndTabletCheck from '../util/mobile-check';
 
-import {
-    sanitizeWidth,
-    sanitizeHeight,
-    availableWidth,
-    availableHeight
-} from '../util/container-size';
+import { assignBound } from '../util/container-size';
 import { mergeOptions } from '../options';
 import { makeColorScale } from '../color';
 
@@ -20,17 +15,15 @@ class AbstractChart {
         this._isMobileSize = mobileAndTabletCheck();
         this._containerId = containerId;
         this._options = this.createOptions(_userOptions);
-        this._options.chart.width = sanitizeWidth(this._options.chart.width, select(containerId));
-        this._options.chart.height = sanitizeHeight(this._options.chart.height, select(containerId));
-        this._options.chart.innerWidth = availableWidth(this._options.chart.width, select(containerId), this._options.chart.margin);
-        this._options.chart.innerHeight = availableHeight(this._options.chart.height, select(containerId), this._options.chart.margin);
+
+        assignBound(containerId, this._options);
 
         this._id = uuid();
         this._data;
         this._color;
-        this._listeners = dispatch();
+        this._container;
+        this._listeners = dispatch('resize');
     }
-
 
     render(_data) {
         this.data(_data);
@@ -39,7 +32,10 @@ class AbstractChart {
         this._container = select(this._containerId).append("svg")
             .attr("width", this._options.chart.width)
             .attr("height", this._options.chart.height)
-            .attr('class', 'vizart-chart');
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + this._options.chart.width + " " + this._options.chart.height)
+            .classed("vizart-chart", true);
+
         this._svg = this._container
             .append("g")
             .attr("transform", "translate(" + this._options.chart.margin.left + "," + this._options.chart.margin.top + ")");
@@ -48,6 +44,16 @@ class AbstractChart {
 
     on(_name, _callback) {
         this._listeners.on(_name, _callback);
+    }
+
+    resize(_size) {
+        resizeBound(this._containerId, this._options, _size);
+
+        this._container
+            .attr("width", this._options.chart.width)
+            .attr("height", this._options.chart.height);
+
+        this._listeners.call('resize');
     }
 
     update() {

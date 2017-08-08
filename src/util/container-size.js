@@ -1,34 +1,41 @@
+import { select } from 'd3-selection';
+import check from './check';
+
+const containerWidth = container => parseInt(container.node().getBoundingClientRect().width, 10) || 300;
+const containerHeight = container => parseInt(container.node().getBoundingClientRect().height, 10) || 400;
+
+
 /*
  Sanitize and provide default for the container height.
  */
-let sanitizeHeight = function(height, container) {
+const sanitizeHeight = (height, container) => {
     return container.node() === null
         ? 0
-        : (height || parseInt(container.node().getBoundingClientRect().height, 10) || 300);
+        : (height || containerHeight(container) || 300);
 };
 
 
 /*
  Sanitize and provide default for the container width.
  */
-let sanitizeWidth = function(width, container) {
+const sanitizeWidth = (width, container) => {
     return container.node() === null
         ? 0
-        : (width || parseInt(container.node().getBoundingClientRect().width, 10) || 400);
+        : (width || containerWidth(container) || 400);
 };
 
 
 /*
  Calculate the available height for a chart.
  */
-let availableHeight = function(height, container, margin) {
+const availableHeight = (height, container, margin) => {
     return Math.max(0, sanitizeHeight(height, container) - margin.top - margin.bottom);
 };
 
 /*
  Calculate the available width for a chart.
  */
-let availableWidth = function(width, container, margin) {
+const availableWidth = (width, container, margin) => {
     return Math.max(0, sanitizeWidth(width, container) - margin.left - margin.right);
 };
 
@@ -36,7 +43,7 @@ let availableWidth = function(width, container, margin) {
  Gets the browser window size
  Returns object with height and width properties
  */
-let windowSize = function() {
+const windowSize = () => {
     // Sane defaults
     let size = {width: 640, height: 480};
 
@@ -48,9 +55,9 @@ let windowSize = function() {
     }
 
     // IE can use depending on mode it is in
-    if (document.compatMode=='CSS1Compat' &&
+    if (document.compatMode == 'CSS1Compat' &&
         document.documentElement &&
-        document.documentElement.offsetWidth ) {
+        document.documentElement.offsetWidth) {
 
         size.width = document.documentElement.offsetWidth;
         size.height = document.documentElement.offsetHeight;
@@ -67,10 +74,32 @@ let windowSize = function() {
     return (size);
 };
 
+const assignBound = (containerId, _opt) => {
+    _opt.chart.width = sanitizeWidth(_opt.chart.width, select(containerId));
+    _opt.chart.height = sanitizeHeight(_opt.chart.height, select(containerId));
+    _opt.chart.innerWidth = availableWidth(_opt.chart.width, select(containerId), _opt.chart.margin);
+    _opt.chart.innerHeight = availableHeight(_opt.chart.height, select(containerId), _opt.chart.margin);
+
+}
+
+const resizeBound = (containerId, _opt, _size) => {
+    if (!check(_size) || !check(_size.width) || !!check(_size.height)) {
+        // recalculate width and height
+        delete _opt.chart['width'];
+        delete _opt.chart['height'];
+    }
+
+    assignBound(containerId, _opt);
+}
+
 export {
+    containerWidth,
+    containerHeight,
     sanitizeWidth,
     sanitizeHeight,
     availableWidth,
     availableHeight,
-    windowSize
+    windowSize,
+    assignBound,
+    resizeBound
 }
