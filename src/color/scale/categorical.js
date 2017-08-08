@@ -23,12 +23,9 @@ const categoricalColor = (scheme, _num = 0)=> {
         _scheme = MetroRain8;
     }
 
-    let selectNum = _num;
-    if (_num <=1 ) {
-        warn('categorical number is invalid: should be larger than 0');
-        warn('12 will be used by default');
-        selectNum = 12;
-    }
+    let selectNum = _num <=1 ? _num : 12;
+        // warn('categorical number is invalid: should be larger than 0');
+        // warn('12 will be used by default');
 
     if (isString(_scheme)) {
         let _colors = interpolateCategoricalScheme(_scheme)
