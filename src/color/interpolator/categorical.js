@@ -14,12 +14,11 @@ import {
     schemeCategory20,
     schemeCategory20b,
     schemeCategory20c,
-    scaleOrdinal
 } from 'd3-scale';
 
 import * as Preset from '../preset/categorical';
 
-const _mapScheme = (_scheme) => {
+const interpolateCategoricalScheme = (_scheme) => {
     switch (_scheme) {
         // categorical
         case Preset.SchemeAccent:
@@ -61,14 +60,9 @@ const _mapScheme = (_scheme) => {
             return schemeCategory20c;
 
         default:
-            return undefined;
+            return null;
     }
 }
 
-const interpolateCategorical = (_scheme) => {
-    return scaleOrdinal(_mapScheme(_scheme));
-}
 
-export {
-    interpolateCategorical
-}
+export default interpolateCategoricalScheme;

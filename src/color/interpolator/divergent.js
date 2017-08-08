@@ -12,7 +12,7 @@ import {
 
 import * as Preset from '../preset/divergent';
 
-const _mapScheme = (_scheme) => {
+const interpolateDivergentScheme = (_scheme) => {
     switch (_scheme) {
         // categorical
         case Preset.SchemeBrBG:
@@ -45,13 +45,8 @@ const _mapScheme = (_scheme) => {
 
 
         default:
-            return undefined;
+            return null;
     }
 }
 
-const interpolateDivergent = (_scheme)=> {
-    throw new Error('not implemented')
-}
-const interpolateDivergentScheme = (_scheme)=> {
-    throw new Error('not implemented')
-}
+export default interpolateDivergentScheme;

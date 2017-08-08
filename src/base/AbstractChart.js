@@ -8,7 +8,7 @@ import mobileAndTabletCheck from '../util/mobile-check';
 
 import { assignBound } from '../util/container-size';
 import { mergeOptions } from '../options';
-import { makeColorScale } from '../color';
+import { genericColor } from '../color';
 
 class AbstractChart {
     constructor(containerId, _userOptions) {
@@ -87,7 +87,7 @@ class AbstractChart {
     };
 
     _provideColor() {
-        return makeColorScale(this._options.color);
+        return genericColor(this._options.color);
     }
 
 }

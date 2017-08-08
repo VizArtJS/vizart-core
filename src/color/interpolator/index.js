@@ -1,3 +1,3 @@
-export * from './categorical';
-export * from './divergent';
-export * from './sequential';
+export { default as interpolateCategoricalScheme } from './categorical';
+export { default as interpolateDivergentScheme } from './divergent';
+export { default as interpolateSequentialScheme } from './sequential';
