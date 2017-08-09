@@ -50,7 +50,7 @@ const _smartSequential = (_scheme, _data)=> {
         // use kmeans
         let clusters = ckmeans(_data, schemeLen - 1);
         let breakpoints = clusters.map(d=> d[d.length - 1]);
-        let _domain = [_data[0]].concat(breakpoints);
+        let _domain = [clusters[0][0]].concat(breakpoints);
 
         _scale.domain(_domain).range(_scheme);
     }
