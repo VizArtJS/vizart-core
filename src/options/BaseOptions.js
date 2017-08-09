@@ -35,7 +35,7 @@ const BaseOpt = {
         selection: null,
     },
     color: {
-        schema : '', // string or array
+        scheme : '', // string or array
         type: '',
         kmeans: true,
     },
