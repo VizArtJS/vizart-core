@@ -14,9 +14,8 @@ import { warn } from '../../util/logger';
 import { MetroRain3 } from '../preset/metropolis';
 
 const _distinctStops = (scheme, distinction)=> {
-    const _color = scaleSequential(scheme).domain(0, 1);
-    const _standardize = scaleLinear().domain(extent(distinction)).range(0,1);
-    return distinction.sort(ascending).map(d=> _color(_standardize(d)));
+    const _color = scaleSequential(scheme).domain(extent(distinction));
+    return distinction.sort(ascending).map(d=> _color(d));
 }
 
 const distinctColor = (scheme, distinction = [0, 0.33, 0.66, 1])=> {
