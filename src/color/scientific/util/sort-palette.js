@@ -37,7 +37,7 @@ const sortPalette = function (colors, mode = 'difference', type = 'Default') {
         case 'rgb':
             let res = sortRGB(colors.map(d=> d.rgb()));
 
-            return res.map(d=> hroma.rgb(d));
+            return res.map(d=> chroma.rgb(d));
         default:
             console.log('unknown sort mode');
             break;

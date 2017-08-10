@@ -1,36 +1,37 @@
 import chroma from 'chroma-js';
+import { range } from 'd3-array';
 import validateLab from './validate-lab';
 import getColorDistance from './get-color-distance';
 
 const generate = function(colorsCount =8,
-                          checkColor =function(x){return true;},
+                          selector = x=>true,
                           forceMode = false,
                           quality = 50,
                           ultra_precision = false,
                           distanceType = "Default"){
     console.log('Generate palettes for '+colorsCount+' colors using color distance "'+distanceType+'"')
 
+    // It will be necessary to check if a Lab color exists in the rgb space.
+    const checkLab = lab=> {
+        let color = chroma.lab(lab[0], lab[1], lab[2]);
+        return validateLab(lab) && selector(color);
+    }
+
+
     if(forceMode){
-        // Force Vector Mode
-
-        let colors = [];
-
-        // It will be necessary to check if a Lab color exists in the rgb space.
-        function checkLab(lab){
-            let color = chroma.lab(lab[0], lab[1], lab[2]);
-            return validateLab(lab) && checkColor(color);
-        }
+        // Force Vector Mod
 
         // Init
         let vectors = {};
-        for(let i=0; i<colorsCount; i++){
-            // Find a valid Lab color
+
+        let colors = range(colorsCount).map(d=> {
             let color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
             while(!checkLab(color)){
                 color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
             }
-            colors.push(color);
-        }
+
+            return color;
+        });
 
         // Force vector: repulsion
         let repulsion = 100;
@@ -83,27 +84,19 @@ const generate = function(colorsCount =8,
                 }
             }
         }
-        return colors.map(function(lab){return chroma.lab(lab[0], lab[1], lab[2]);});
+        return colors.map(lab=> chroma.lab(lab[0], lab[1], lab[2]));
 
     } else {
-
         // K-Means Mode
-        function checkColor2(lab){
-            // Check that a color is valid: it must verify our checkColor condition, but also be in the color space
-            let color = chroma.lab(lab);
-            let hcl = color.hcl();
-            return validateLab(lab) && checkColor(color);
-        }
 
-        let kMeans = [];
-        for(let i=0; i<colorsCount; i++){
+        let kMeans = range(colorsCount).map(d=> {
             let lab = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-            while(!checkColor2(lab)){
+            while(!checkLab(lab)){
                 lab = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
             }
-            kMeans.push(lab);
-        }
 
+            return lab;
+        })
 
         let colorSamples = [];
         let samplesClosest = [];
@@ -111,7 +104,7 @@ const generate = function(colorsCount =8,
             for(let l=0; l<=100; l+=1){
                 for(let a=-100; a<=100; a+=5){
                     for(let b=-100; b<=100; b+=5){
-                        if(checkColor2([l, a, b])){
+                        if(checkLab([l, a, b])){
                             colorSamples.push([l, a, b]);
                             samplesClosest.push(null);
                         }
@@ -122,7 +115,7 @@ const generate = function(colorsCount =8,
             for(let l=0; l<=100; l+=5){
                 for(let a=-100; a<=100; a+=10){
                     for(let b=-100; b<=100; b+=10){
-                        if(checkColor2([l, a, b])){
+                        if(checkLab([l, a, b])){
                             colorSamples.push([l, a, b]);
                             samplesClosest.push(null);
                         }
@@ -167,7 +160,7 @@ const generate = function(colorsCount =8,
                     candidateKMean[2] /= count;
                 }
 
-                if(count!=0 && checkColor2([candidateKMean[0], candidateKMean[1], candidateKMean[2]]) && candidateKMean){
+                if(count!=0 && checkLab([candidateKMean[0], candidateKMean[1], candidateKMean[2]]) && candidateKMean){
                     kMeans[j] = candidateKMean;
                 } else {
                     // The candidate kMean is out of the boundaries of the color space, or unfound.
