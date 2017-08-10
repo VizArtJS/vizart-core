@@ -6,7 +6,7 @@ import check from '../util/check';
 import uuid from '../util/uuid';
 import mobileAndTabletCheck from '../util/mobile-check';
 
-import { assignBound } from '../util/container-size';
+import { assignBound, resizeBound } from '../util/container-size';
 import { mergeOptions } from '../options';
 import { genericColor } from '../color';
 
