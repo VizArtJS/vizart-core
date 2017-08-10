@@ -3,17 +3,6 @@ import { range } from 'd3-array';
 import validateLab from './validate-lab';
 import getColorDistance from './get-color-distance';
 
-const initColorSpace = _num=> {
-    range(_num).map(d=> {
-        let color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-        while(!checkLab(color)){
-            color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-        }
-
-        return color;
-    });
-}
-
 const generate = function(colorsCount =8,
                           selector = x=>true,
                           forceMode = false,
@@ -28,6 +17,16 @@ const generate = function(colorsCount =8,
         return validateLab(lab) && selector(color);
     }
 
+    const initColorSpace = _num=> {
+        return range(_num).map(d=> {
+            let color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
+            while(!checkLab(color)){
+                color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
+            }
+
+            return color;
+        });
+    }
 
     if(forceMode){
         // Force Vector Mod
@@ -92,7 +91,7 @@ const generate = function(colorsCount =8,
 
     } else {
         // K-Means Mode
-
+        console.log('------')
         let kMeans = initColorSpace(colorsCount);
 
         let colorSamples = [];
