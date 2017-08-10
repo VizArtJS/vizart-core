@@ -75,7 +75,7 @@ const distanceColorblind =(lab1, lab2, type)=> {
     return _cmcDistance(lab1_cb, lab2_cb, 2, 1);
 }
 
-const getColorDistance = function(lab1, lab2, _type = 'Default') {
+const getColorDistance = (lab1, lab2, _type = 'Default')=> {
     switch (_type) {
         case 'Default':
             return _euclidianDistance(lab1, lab2);
