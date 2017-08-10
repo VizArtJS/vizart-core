@@ -19,7 +19,7 @@ const lab_xyz = (labConstants, t)=> {
     return (t > labConstants.t1) ? (t * t * t) : ( labConstants.t2 * (t - labConstants.t0) )
 }
 
-const validateLab = (lab)=> {
+const validateLab = lab=> {
     // Code from Chroma.js 2016
 
     let l = lab[0]

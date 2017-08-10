@@ -3,6 +3,17 @@ import { range } from 'd3-array';
 import validateLab from './validate-lab';
 import getColorDistance from './get-color-distance';
 
+const initColorSpace = _num=> {
+    range(_num).map(d=> {
+        let color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
+        while(!checkLab(color)){
+            color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
+        }
+
+        return color;
+    });
+}
+
 const generate = function(colorsCount =8,
                           selector = x=>true,
                           forceMode = false,
@@ -24,14 +35,7 @@ const generate = function(colorsCount =8,
         // Init
         let vectors = {};
 
-        let colors = range(colorsCount).map(d=> {
-            let color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-            while(!checkLab(color)){
-                color = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-            }
-
-            return color;
-        });
+        let colors = initColorSpace(colorsCount);
 
         // Force vector: repulsion
         let repulsion = 100;
@@ -89,14 +93,7 @@ const generate = function(colorsCount =8,
     } else {
         // K-Means Mode
 
-        let kMeans = range(colorsCount).map(d=> {
-            let lab = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-            while(!checkLab(lab)){
-                lab = [100*Math.random(),100*(2*Math.random()-1),100*(2*Math.random()-1)];
-            }
-
-            return lab;
-        })
+        let kMeans = initColorSpace(colorsCount);
 
         let colorSamples = [];
         let samplesClosest = [];
