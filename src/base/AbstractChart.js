@@ -4,6 +4,7 @@ import 'd3-transition';
 
 import check from '../util/check';
 import uuid from '../util/uuid';
+import exportPNG from '../util/export-png';
 import mobileAndTabletCheck from '../util/mobile-check';
 
 import { assignBound, resizeBound } from '../util/container-size';
@@ -90,6 +91,9 @@ class AbstractChart {
         return genericColor(this._options.color);
     }
 
+    export() {
+        exportPNG(this);
+    }
 }
 
 export default AbstractChart;
