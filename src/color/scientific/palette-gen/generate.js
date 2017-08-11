@@ -91,7 +91,6 @@ const generate = function(colorsCount =8,
 
     } else {
         // K-Means Mode
-        console.log('------')
         let kMeans = initColorSpace(colorsCount);
 
         let colorSamples = [];
