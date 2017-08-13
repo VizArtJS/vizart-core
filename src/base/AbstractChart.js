@@ -43,19 +43,6 @@ class AbstractChart {
 
     }
 
-    on(_name, _callback) {
-        this._listeners.on(_name, _callback);
-    }
-
-    resize(_size) {
-        resizeBound(this._containerId, this._options, _size);
-
-        this._container
-            .attr("width", this._options.chart.width)
-            .attr("height", this._options.chart.height);
-
-        this._listeners.call('resize');
-    }
 
     update() {
         this._color = this._provideColor();
@@ -81,7 +68,20 @@ class AbstractChart {
         return this._options;
     };
 
+    on(_name, _callback) {
+        this._listeners.on(_name, _callback);
+    }
 
+    resize(_size) {
+        resizeBound(this._containerId, this._options, _size);
+
+        this._container
+            .attr("width", this._options.chart.width)
+            .attr("height", this._options.chart.height);
+
+        this._listeners.call('resize');
+    }
+    
     transitionColor(colorOptions) {
         this._options.color = colorOptions;
         this._color = this._provideColor();
