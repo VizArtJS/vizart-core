@@ -26,18 +26,24 @@
 <div id="test"></div>
 <script>
     $(document).ready(function () {
-        function shuffle(array) {
-            var tmp, current, top = array.length;
+        const swap = (array, a, b)=> {
+            let t = array[a];
+            array[a] = array[b];
+            array[b] = t;
+        }
 
-            if(top) while(--top) {
-                current = Math.floor(Math.random() * (top + 1));
-                tmp = array[current];
-                array[current] = array[top];
-                array[top] = tmp;
+        // in-place O(n) shuffle,
+        const shuffle =(array)=> {
+            let m = array.length;
+
+            while(m > 0) {
+                let i = Math.floor(Math.random() * m--);
+                swap(array, m ,i);
             }
 
             return array;
         }
+
 
 
 //        let palette = VizArtCore.reduceToPalette(10, VizArtCore.FancyLight);
