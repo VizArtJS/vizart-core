@@ -10,50 +10,43 @@ import {
     interpolateSpectral,
 } from 'd3-scale-chromatic';
 
-// Diverging
-const BrBG = 'BrBG';
-const PRGn = 'PRGn';
-const PiYG = 'PiYG';
-const PuOr = 'PuOr';
-const RdBu = 'RdBu';
-const RdGy = 'RdGy';
-const RdYlBu = 'RdYlBu';
-const RdYlGn = 'RdYlGn';
-const Spectral = 'Spectral';
+import * as Preset from '../preset/divergent';
 
-let interpolateDiverging = function(_name) {
-    switch (_name) {
-        // Diverging
-        case BrBG:
+const interpolateDivergentScheme = (_scheme) => {
+    switch (_scheme) {
+        // categorical
+        case Preset.SchemeBrBG:
             return interpolateBrBG;
 
-        case PRGn:
+        case Preset.SchemePRGn:
             return interpolatePRGn;
 
-        case PiYG:
+        case Preset.SchemePiYG:
             return interpolatePiYG;
 
-        case PuOr:
+        case Preset.SchemePuOr:
             return interpolatePuOr;
 
-        case RdBu:
+        case Preset.SchemeRdBu:
             return interpolateRdBu;
 
-        case RdGy:
+        case Preset.SchemeRdGy:
             return interpolateRdGy;
 
-        case RdYlBu:
+        case Preset.SchemeRdYlBu:
             return interpolateRdYlBu;
 
-        case RdYlGn:
+        case Preset.SchemeRdYlGn:
             return interpolateRdYlGn;
 
-        case Spectral:
+
+        case Preset.SchemeSpectral:
             return interpolateSpectral;
 
+
         default:
-            return undefined;
+            return null;
     }
 }
 
-export default interpolateDiverging;
+export default interpolateDivergentScheme;

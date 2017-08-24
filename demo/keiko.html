@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Keiko</title>
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="lib/jquery-1.12.4.min.js"></script>
+    <script src="lib/d3.v4.min.js"></script>
     <script src="lib/sigma/sigma.min.js"></script>
     <script src="lib/chroma.min.js"></script>
+    <script src="lib/lodash.js"></script>
     <script src="lib/sigma/plugins/sigma.layout.forceAtlas2.min.js"></script>
     <script src="./vizart-core.standalone.js"></script>
     <style>
@@ -25,18 +26,25 @@
 <div id="test"></div>
 <script>
     $(document).ready(function () {
-        function shuffle(array) {
-            var tmp, current, top = array.length;
+        const swap = (array, a, b)=> {
+            let t = array[a];
+            array[a] = array[b];
+            array[b] = t;
+        }
 
-            if(top) while(--top) {
-                current = Math.floor(Math.random() * (top + 1));
-                tmp = array[current];
-                array[current] = array[top];
-                array[top] = tmp;
+        // in-place O(n) shuffle,
+        const shuffle =(array)=> {
+            let m = array.length;
+
+            while(m > 0) {
+                let i = Math.floor(Math.random() * m--);
+                swap(array, m ,i);
             }
 
             return array;
         }
+
+
 
 //        let palette = VizArtCore.reduceToPalette(10, VizArtCore.FancyLight);
 //        console.log(palette);

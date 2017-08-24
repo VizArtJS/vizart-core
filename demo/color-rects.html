@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Color Sort</title>
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <script src="lib/jquery-1.12.4.min.js"></script>
+    <script src="lib/d3.v4.min.js"></script>
+    <script src="lib/lodash.js"></script>
     <script src="lib/chroma.min.js"></script>
     <script src="./vizart-core.standalone.js"></script>
     <style>
@@ -31,10 +31,11 @@
 <script>
     $(document).ready(function () {
 
-        let palette = VizArtCore.reduceToPalette(20, VizArtCore.AllColors, {
+        let palette = VizArtCore.reduceToPalette(20, VizArtCore.AllHcl, {
+            useFV: false,
             colorblind: false
         });
-        let _selector = new VizArtCore.HclSelector(VizArtCore.AllColors);
+        let _selector = new VizArtCore.HclSelector(VizArtCore.AllHcl);
         let subspaceSamples = VizArtCore.getSubColorSpace(palette, function (c) {
             return _selector.validate(c.hcl);
         });

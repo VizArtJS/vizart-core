@@ -1,5 +1,5 @@
-import { validateLab } from './palette-gen';
 import chroma from 'chroma-js';
+import { validateLab } from './palette-gen';
 
 const lstep = 3;
 const astep = 8;
@@ -10,7 +10,7 @@ const sampleColorSpace = ()=> {
     let colorSamples = [];
     let colorsIndex = {};
 
-    function sampleColor(lab) {
+    const sampleColor =(lab)=> {
         // Test if color exists in lab space
         if (validateLab(lab)) {
             let color = chroma.lab(lab)

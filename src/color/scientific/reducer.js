@@ -1,6 +1,6 @@
+import merge from 'lodash-es/merge';
 import HclSelector from './util/HclSelector';
 import { generate } from './palette-gen';
-import merge from 'lodash-es/merge';
 
 const DefaultOpt = {
     quality: 50,
@@ -19,14 +19,12 @@ const reduceToPalette = (_count, preset, _opt = DefaultOpt)=>{
     const precision = opt.ultraPrecision;
     const dType = opt.colorblind ? 'Compromise': 'Default';
 
-    const paletteSelector = function(color){
-        return _selector.validate(color.hcl());
-    }
+    const paletteSelector = color => _selector.validate(color.hcl());
 
     // Generate colors
     let colors = generate(_count, paletteSelector, useFV, q, precision, dType);
 
-    return colors.map((color) => {
+    return colors.map(color => {
         return {
             color: color,
             hex: color.hex(),

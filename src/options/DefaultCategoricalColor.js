@@ -1,6 +1,9 @@
+import Globals from '../base/Globals';
+import { TheMetLight } from '../color/preset/metropolis';
+
 const DefaultCategoricalColor = {
-    scheme: ['#E5EEC1','#A2D4AB','#3EACA8','#547A82','#5A5050'],
-    type: 'categorical'
+    scheme: TheMetLight,
+    type: Globals.ColorType.CATEGORICAL
 };
 
 export default DefaultCategoricalColor;

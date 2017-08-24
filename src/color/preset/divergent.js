@@ -1,0 +1,9 @@
+export const SchemeBrBG = "BrBG";
+export const SchemePRGn = "PRGn";
+export const SchemePiYG = "PiYG";
+export const SchemePuOr = "PuOr";
+export const SchemeRdBu = "RdBu";
+export const SchemeRdGy = "RdGy";
+export const SchemeRdYlBu = "RdYlBu";
+export const SchemeRdYlGn = "RdYlGn";
+export const SchemeSpectral = "Spectral";

@@ -11,6 +11,7 @@ import {
     interpolateYlGn,
     interpolateYlOrBr,
     interpolateYlOrRd,
+
     interpolateBlues,
     interpolateGreens,
     interpolateGreys,
@@ -30,126 +31,108 @@ import {
     interpolateCubehelixDefault,
 } from 'd3-scale';
 
-// Sequential (Single Hue)
-const Blues = 'Blues';
-const Greens = 'Greens';
-const Greys = 'Greys';
-const Oranges = 'Oranges';
-const Purples = 'Purples';
-const Reds = 'Reds';
+import isFunction from 'lodash-es/isFunction';
+import isString from 'lodash-es/isString';
 
+import * as Preset from '../preset/sequential';
 
-// Sequential (Multi-Hue)
-const BuGn = 'BuGn';
-const BuPu = 'BuPu';
-const GnBu = 'GnBu';
-const OrRd = 'OrRd';
-const PuBuGn = 'PuBuGn';
-const PuBu = 'PuBu';
-const PuRd = 'PuRd';
-const RdPu = 'RdPu';
-const YlGnBu = 'YlGnBu';
-const YlGn = 'YlGn';
-const YlOrBr = 'YlOrBr';
-const YlOrRd = 'YlOrRd';
+const interpolateSequentialScheme = (_scheme)=> {
+    if (!isFunction(_scheme) && !isString(_scheme)) {
+        throw new Error(_scheme  + 'is invalid')
+    }
 
-const Viridis = 'Viridis';
-const Inferno = 'Inferno';
-const Magma = 'Magma';
-const Plasma = 'Plasma';
-const Warm = 'Warm';
-const Cool = 'Cool';
-const Rainbow = 'Rainbow';
-const Cubehelix = 'Cubehelix';
+    // user specified interpolator
+    if (isFunction(_scheme)) {
+        return _scheme;
+    }
 
-let interpolateSequential = function(_name) {
-    switch(_name) {
-
+    //shortcode for internal interpolators
+    switch(_scheme) {
 
         // sequential single hue
-        case Blues:
+        case Preset.SchemeBlues:
             return interpolateBlues;
 
-        case Greens:
+        case Preset.SchemeGreens:
             return interpolateGreens;
 
-        case Greys:
+        case Preset.SchemeGreys:
             return interpolateGreys;
 
-        case Oranges:
+        case Preset.SchemeOranges:
             return interpolateOranges;
 
-        case Reds:
+        case Preset.SchemeReds:
             return interpolateReds;
 
-        case Purples:
+        case Preset.SchemePurples:
             return interpolatePurples;
 
         // Sequential (Multi-Hue)
-        case BuGn:
+        case Preset.SchemeBuGn:
             return interpolateBuGn;
 
-        case BuPu:
+        case Preset.SchemeBuPu:
             return interpolateBuPu;
 
-        case GnBu:
+        case Preset.SchemeGnBu:
             return interpolateGnBu;
 
-        case OrRd:
+        case Preset.SchemeOrRd:
             return interpolateOrRd;
 
-        case PuBuGn:
+        case Preset.SchemePuBuGn:
             return interpolatePuBuGn;
 
-        case PuBu:
+        case Preset.SchemePuBu:
             return interpolatePuBu;
 
-        case PuRd:
+        case Preset.SchemePuRd:
             return interpolatePuRd;
 
-        case RdPu:
+        case Preset.SchemeRdPu:
             return interpolateRdPu;
 
-        case YlGnBu:
+        case Preset.SchemeYlGnBu:
             return interpolateYlGnBu;
 
-        case YlGn:
+        case Preset.SchemeYlGn:
             return interpolateYlGn;
 
-        case YlOrBr:
+        case Preset.SchemeYlOrBr:
             return interpolateYlOrBr;
 
-        case YlOrRd:
+        case Preset.SchemeYlOrRd:
             return interpolateYlOrRd;
 
         // R Color
-        case Viridis:
+        case Preset.SchemeViridis:
             return interpolateViridis;
 
-        case Inferno:
+        case Preset.SchemeInferno:
             return interpolateInferno;
 
-        case Magma:
+        case Preset.SchemeMagma:
             return interpolateMagma;
 
-        case Plasma:
+        case Preset.SchemePlasma:
             return interpolatePlasma;
 
-        case Warm:
+        case Preset.SchemeWarm:
             return interpolateWarm;
 
-        case Cool:
+        case Preset.SchemeCool:
             return interpolateCool;
 
-        case Rainbow:
+        case Preset.SchemeRainbow:
             return interpolateRainbow;
 
-        case Cubehelix:
+        case Preset.SchemeCubehelix:
             return interpolateCubehelixDefault;
 
         default:
-            return undefined;
+            return null;
     }
 }
 
-export default interpolateSequential;
+export default interpolateSequentialScheme;

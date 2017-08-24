@@ -6,10 +6,10 @@ const BaseOpt = {
         height:null,
         className: null,
         margin: {
-            left: 20,
-            right: 20,
-            top: 20,
-            bottom: 20
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
         },
         background: {
             color: null,
@@ -35,7 +35,7 @@ const BaseOpt = {
         selection: null,
     },
     color: {
-        schema : '', // string or array
+        scheme : '', // string or array
         type: '',
         kmeans: true,
     },
@@ -59,27 +59,7 @@ const BaseOpt = {
 
     legend: {
         enabled: false,
-    },
-
-    // credits: {
-    //     enabled: true,
-    //     href: 'http://www.smartsct.com',
-    //     text: 'Powered By ExceedData',
-    //     position: '',
-    //     style: ''
-    // },
-    // noData : {
-    //     enabled: false
-    // },
-    // loading: {
-    //     hideDuration: 100,
-    //     labelStyle: { "fontWeight": "bold", "position": "relative", "top": "45%" },
-    //     showDuration: 100,
-    //     style: ""
-    // },
-
-
-
+    }
 }
 
 

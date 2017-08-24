@@ -24,13 +24,7 @@ export default {
             browser: true,
             extensions: ['.js']
         }),
-        commonjs(
-            {
-                namedExports: {
-                    'node_modules/simple-statistics/index.js': [ 'ckmeans', 'equalIntervalBreaks' ],
-                }
-            }
-        ),
+        commonjs(),
     ],
     external: external,
     targets: [

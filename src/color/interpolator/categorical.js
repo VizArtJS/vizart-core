@@ -16,66 +16,53 @@ import {
     schemeCategory20c,
 } from 'd3-scale';
 
+import * as Preset from '../preset/categorical';
 
-// Categorical
-const Accent = 'Accent';
-const Dark2 = 'Dark2';
-const Paired = 'Paired';
-const Pastel1 = 'Pastel1';
-const Pastel2 = 'Pastel2';
-const Set1 = 'Set1';
-const Set2 = 'Set2';
-const Set3 = 'Set3';
-
-const Category10 = 'Category10';
-const Category20 = 'Category20';
-const Category20b = 'Category20b';
-const Category20c = 'Category20c';
-
-let interpolateCategorical = function(_name) {
-    switch (_name) {
+const interpolateCategoricalScheme = (_scheme) => {
+    switch (_scheme) {
         // categorical
-        case Accent:
+        case Preset.SchemeAccent:
             return schemeAccent;
 
-        case Dark2:
+        case Preset.SchemeDark2:
             return schemeDark2;
 
-        case Paired:
+        case Preset.SchemePaired:
             return schemePaired;
 
-        case Pastel1:
+        case Preset.SchemePastel1:
             return schemePastel1;
 
-        case Pastel2:
+        case Preset.SchemePastel2:
             return schemePastel2;
 
-        case Set1:
+        case Preset.SchemeSet1:
             return schemeSet1;
 
-        case Set2:
+        case Preset.SchemeSet2:
             return schemeSet2;
 
-        case Set3:
+        case Preset.SchemeSet3:
             return schemeSet3;
 
 
         // categorical
-        case Category10:
+        case Preset.SchemeCategory10:
             return schemeCategory10;
 
-        case Category20:
+        case Preset.SchemeCategory20:
             return schemeCategory20;
 
-        case Category20b:
+        case Preset.SchemeCategory20b:
             return schemeCategory20b;
 
-        case Category20c:
+        case Preset.SchemeCategory20c:
             return schemeCategory20c;
 
         default:
-            return undefined;
+            return null;
     }
 }
 
-export default interpolateCategorical;
+
+export default interpolateCategoricalScheme;

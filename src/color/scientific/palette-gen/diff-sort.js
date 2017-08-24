@@ -1,6 +1,6 @@
 import getColorDistance from './get-color-distance';
 
-const diffSort = function(colorsToSort, distanceType){
+const diffSort = (colorsToSort, distanceType)=> {
     // Sort
     let diffColors = [colorsToSort.shift()];
     while(colorsToSort.length>0){
