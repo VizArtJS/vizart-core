@@ -9,7 +9,7 @@ let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
 
 export default {
-    entry: 'src/index.js',
+    input: 'src/index.js',
     plugins: [
         json({
             exclude: [ 'node_modules' ],
@@ -27,17 +27,17 @@ export default {
         commonjs(),
     ],
     external: external,
-    targets: [
+    output: [
         {
-            dest: pkg.main,
+            file: pkg.main,
             format: 'umd',
-            moduleName: 'VizArtCore',
-            sourceMap: true
+            name: 'VizArtCore',
+            sourcemap: true
         },
         {
-            dest: pkg.module,
+            file: pkg.module,
             format: 'es',
-            sourceMap: true
+            sourcemap: true
         }
     ]
 };
