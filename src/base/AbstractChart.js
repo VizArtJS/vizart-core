@@ -1,6 +1,7 @@
 import { select } from 'd3-selection';
 import { dispatch } from 'd3-dispatch';
 import 'd3-transition';
+import values from 'lodash-es/values'
 
 import check from '../util/check';
 import uuid from '../util/uuid';
@@ -10,6 +11,10 @@ import mobileAndTabletCheck from '../util/mobile-check';
 import { assignBound, resizeBound } from '../util/container-size';
 import { mergeOptions } from '../options';
 import { genericColor } from '../color';
+
+const StandardDispatchers = {
+    Rendered: 'rendered'
+}
 
 class AbstractChart {
     constructor(containerId, _userOptions) {
@@ -23,7 +28,7 @@ class AbstractChart {
         this._data;
         this._color;
         this._container;
-        this._listeners = dispatch('resize');
+        this._listeners = dispatch(values(StandardDispatchers));
     }
 
     render(_data) {

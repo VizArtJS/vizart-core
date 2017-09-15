@@ -2,15 +2,12 @@ import isFunction from 'lodash-es/isFunction';
 import isString from 'lodash-es/isString';
 import isArray from 'lodash-es/isArray';
 import { range } from 'd3-array';
-import { format } from 'd3-format';
 import { scaleSequential } from 'd3-scale';
-
 import equalIntervalBreaks from './equal-interval-breaks';
 import interpolateSequentialScheme from '../interpolator/sequential';
 
-const formatter = format(".0%");
 
-const linearStops =(scheme)=> {
+const linearStops = (scheme)=> {
     if (isString(scheme) || isFunction(scheme)) {
         const _seqScale = scaleSequential(interpolateSequentialScheme(scheme)).domain([0, 1]); // explicit domain, not really need to do so
 
@@ -19,7 +16,7 @@ const linearStops =(scheme)=> {
 
         return _data.map(d=>{
             return {
-                offset: formatter(d),
+                offset: d,
                 color: _seqScale(d)
             }
         });
@@ -31,7 +28,7 @@ const linearStops =(scheme)=> {
 
             return steps.map((d, i)=>{
                 return  {
-                    offset: formatter(d),
+                    offset: d,
                     color: scheme[i]
                 }
             });
