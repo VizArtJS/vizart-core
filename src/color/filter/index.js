@@ -1,1 +1,1 @@
-export { default as linearStops } from './linearStops';
+export { default as linearStops } from './linear-stops';
