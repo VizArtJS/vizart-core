@@ -23,8 +23,6 @@ class AbstractCanvasChart extends AbstractChart {
     render(_data) {
         super.render(_data);
 
-        select(this._containerId).style('position', 'absolute');
-
         this._detachedContainer = select(this._containerId).append('vizart-detached');
 
         const devicePixelRatio = window.devicePixelRatio || 1;
