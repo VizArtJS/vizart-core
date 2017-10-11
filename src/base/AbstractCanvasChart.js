@@ -70,8 +70,8 @@ class AbstractCanvasChart extends AbstractChart {
 
         this._container
             .style('position', 'absolute')
-            .style('top', 0)
-            .style('left', 0)
+            // .style('top', 0)
+            // .style('left', 0)
             .style('pointer-events', 'none');
 
         this._animate();
