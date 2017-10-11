@@ -45,6 +45,7 @@ const BaseOpt = {
         className: null,
         enabled: true,
         duration: 500,
+        offset: [30, 30],
         formatter:  ()=> { }
     },
     data: {},

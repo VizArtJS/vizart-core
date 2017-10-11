@@ -32,7 +32,7 @@ const genericColor = (_color, _data)=> {
             return categoricalColor(_scheme);
 
         default:
-            warn('color type should be gradient, distinct, divergent and categorical');
+            warn('color type should be gradient, distinct, divergent or categorical');
             break;
     }
 }
