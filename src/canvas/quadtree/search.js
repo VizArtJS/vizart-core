@@ -11,7 +11,7 @@ const search = (quadtree, x0, y0, x3, y3) => {
   quadtree.visit(function(node, x1, y1, x2, y2) {
     if (!node.length) {
       do {
-        var d = node.data;
+        let d = node.data;
         d.scanned = true;
         d.selected = d[0] >= x0 && d[0] < x3 && d[1] >= y0 && d[1] < y3;
       } while ((node = node.next));

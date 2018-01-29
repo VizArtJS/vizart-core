@@ -1,10 +1,10 @@
 //Trying to figure out how to detect touch devices (exept for laptops with touch screens)
 //Since there's no need to have a mouseover function for touch
 //There has to be a more foolproof way than this...
-//var mobileSize = true;
+//let mobileSize = true;
 //if (!("ontouchstart" in document.documentElement) | window.innerWidth > 900) mobileSize = false;
 let mobileAndTabletCheck = function() {
-  var check = false;
+  let check = false;
   (function(a) {
     if (
       /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(

@@ -2,15 +2,15 @@
 // fit within the given width.
 let truncate = function(text, width) {
   return function(d, i) {
-    var t = (this.textContent = text(d, i)),
+    let t = (this.textContent = text(d, i)),
       w = width(d, i);
     if (this.getComputedTextLength() < w) return t;
     this.textContent = '…' + t;
-    var lo = 0,
+    let lo = 0,
       hi = t.length + 1,
       x;
     while (lo < hi) {
-      var mid = (lo + hi) >> 1;
+      let mid = (lo + hi) >> 1;
       if ((x = this.getSubStringLength(0, mid)) < w) lo = mid + 1;
       else hi = mid;
     }

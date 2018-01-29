@@ -4,7 +4,7 @@ import { select } from 'd3-selection';
 //Wraps SVG text
 let wrapSVGText = function(text, width) {
   text.each(function() {
-    var text = select(this),
+    let text = select(this),
       words = text
         .text()
         .split(/\s+/)
@@ -43,7 +43,7 @@ let wrapSVGText = function(text, width) {
 
 //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
 let wrapTextSmaller = function(text, width) {
-  var text = select(text),
+  let text = select(text),
     words = text
       .text()
       .split(/\s+/)
