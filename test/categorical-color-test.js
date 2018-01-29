@@ -13,7 +13,7 @@ describe('categorical color scale', () => {
 
 
     it('Cubehelix for 4', () => {
-        let scale = categoricalColor('Cubehelix', 4).domain(["A", "B", "C", "D"]);
+        const scale = categoricalColor('Cubehelix', 4).domain(["A", "B", "C", "D"]);
 
         strictEqual(scale.range().length, 4);
         strictEqual(scale("A"), 'rgb(0, 0, 0)');

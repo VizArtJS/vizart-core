@@ -7,14 +7,8 @@ import {
     schemeSet1,
     schemeSet2,
     schemeSet3,
-} from "d3-scale-chromatic";
-
-import {
     schemeCategory10,
-    schemeCategory20,
-    schemeCategory20b,
-    schemeCategory20c,
-} from 'd3-scale';
+} from "d3-scale-chromatic";
 
 import * as Preset from '../preset/categorical';
 
@@ -45,24 +39,13 @@ const interpolateCategoricalScheme = (_scheme) => {
         case Preset.SchemeSet3:
             return schemeSet3;
 
-
         // categorical
         case Preset.SchemeCategory10:
             return schemeCategory10;
-
-        case Preset.SchemeCategory20:
-            return schemeCategory20;
-
-        case Preset.SchemeCategory20b:
-            return schemeCategory20b;
-
-        case Preset.SchemeCategory20c:
-            return schemeCategory20c;
 
         default:
             return null;
     }
 }
-
 
 export default interpolateCategoricalScheme;
