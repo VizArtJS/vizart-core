@@ -17,10 +17,8 @@ import {
     interpolateGreys,
     interpolatePurples,
     interpolateReds,
-    interpolateOranges
-} from "d3-scale-chromatic";
+    interpolateOranges,
 
-import {
     interpolateViridis,
     interpolateInferno,
     interpolateMagma,
@@ -29,7 +27,7 @@ import {
     interpolateCool,
     interpolateRainbow,
     interpolateCubehelixDefault,
-} from 'd3-scale';
+} from "d3-scale-chromatic";
 
 import isFunction from 'lodash-es/isFunction';
 import isString from 'lodash-es/isString';

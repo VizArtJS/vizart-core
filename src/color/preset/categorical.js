@@ -7,7 +7,3 @@ export const SchemeSet1 = 'Set1';
 export const SchemeSet2 = 'Set2';
 export const SchemeSet3 = 'Set3';
 export const SchemeCategory10 = 'Category10';
-export const SchemeCategory20 = 'Category20';
-export const SchemeCategory20b = 'Category20b';
-export const SchemeCategory20c = 'Category20c';
-

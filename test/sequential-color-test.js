@@ -1,8 +1,8 @@
 import gradientColor from '../src/color/scale/gradient';
 import { MetroRain3 } from '../src/color/preset/metropolis';
 import { strictEqual } from 'assert';
-import { scaleSequential, interpolateCubehelixDefault } from 'd3-scale';
-import { interpolateBlues } from 'd3-scale-chromatic';
+import { scaleSequential } from 'd3-scale';
+import { interpolateBlues, interpolateCubehelixDefault } from 'd3-scale-chromatic';
 import { color } from 'd3-color';
 
 describe('gradient color scale', () => {

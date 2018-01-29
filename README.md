@@ -203,15 +203,6 @@ const _color = {
 ##### SchemeCategory10
 'Category10'/d3.schemeCategory10
 <img height="20" width="100%" alt="Category10" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category10.png">
-##### SchemeCategory20
-'Category20'/d3.schemeCategory20
-<img height="20" width="100%" alt="Category20" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20.png">
-##### SchemeCategory20b
-'Category20b'/d3.schemeCategory20b
-<img height="20" width="100%" alt="Category20b" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20b.png">
-##### SchemeCategory20c
-'Category20c'/d3.schemeCategory20c
-<img height="20" width="100%" alt="Category20c" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/color-scale/category20c.png">
 
 #### Divergent
 ##### SchemeBrBG
