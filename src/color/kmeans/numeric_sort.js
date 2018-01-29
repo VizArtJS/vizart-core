@@ -17,14 +17,16 @@
  * @example
  * numericSort([3, 2, 1]) // => [1, 2, 3]
  */
-const numericSort =(x /*: Array<number> */)=> /*: Array<number> */ {
-    return x
-        // ensure the array is not changed in-place
-        .slice()
-        // comparator function that treats input as numeric
-        .sort((a, b)=> {
-            return a - b;
-        });
-}
+const numericSort = (x /*: Array<number> */) => /*: Array<number> */ {
+  return (
+    x
+      // ensure the array is not changed in-place
+      .slice()
+      // comparator function that treats input as numeric
+      .sort((a, b) => {
+        return a - b;
+      })
+  );
+};
 
-export default numericSort
+export default numericSort;

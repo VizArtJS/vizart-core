@@ -8,24 +8,25 @@
  * }
  * @return sub color space
  */
-const withinRange = (min, max, d)=> d >= min && d <= max;
-const hcondition = (preset, hcl) => withinRange(preset.hmin, preset.hmax, hcl[0]);
-const ccondition = (preset, hcl) => withinRange(preset.cmin, preset.cmax, hcl[1]);
-const lcondition = (preset, hcl) => withinRange(preset.lmin, preset.lmax, hcl[2]);
+const withinRange = (min, max, d) => d >= min && d <= max;
+const hcondition = (preset, hcl) =>
+  withinRange(preset.hmin, preset.hmax, hcl[0]);
+const ccondition = (preset, hcl) =>
+  withinRange(preset.cmin, preset.cmax, hcl[1]);
+const lcondition = (preset, hcl) =>
+  withinRange(preset.lmin, preset.lmax, hcl[2]);
 
+const selectHCL = (preset, hcl) =>
+  hcondition(preset, hcl) && ccondition(preset, hcl) && lcondition(preset, hcl);
 
-const selectHCL = (preset, hcl)=> hcondition(preset, hcl) && ccondition(preset, hcl) && lcondition(preset, hcl);
+class HclSelector {
+  constructor(preset) {
+    this.preset = preset;
+  }
 
-
-class HclSelector  {
-    constructor(preset) {
-        this.preset = preset;
-    }
-
-    validate(hcl) {
-        return selectHCL(this.preset, hcl);
-    }
-
+  validate(hcl) {
+    return selectHCL(this.preset, hcl);
+  }
 }
 
 export default HclSelector;

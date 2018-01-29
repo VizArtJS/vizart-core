@@ -1,9 +1,7 @@
 const warn = msg => {
-    if(console) {
-        console.warn(msg);
-    }
-}
+  if (console) {
+    console.warn(msg);
+  }
+};
 
-export {
-    warn
-}
+export { warn };

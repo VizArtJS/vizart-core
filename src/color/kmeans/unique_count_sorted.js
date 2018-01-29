@@ -14,16 +14,16 @@
  * uniqueCountSorted([1, 2, 3]); // => 3
  * uniqueCountSorted([1, 1, 1]); // => 1
  */
-const uniqueCountSorted = (x/*: Array<any>*/)=>/*: number */ {
-    let uniqueValueCount = 0,
-        lastSeenValue;
-    for (let i = 0; i < x.length; i++) {
-        if (i === 0 || x[i] !== lastSeenValue) {
-            lastSeenValue = x[i];
-            uniqueValueCount++;
-        }
+const uniqueCountSorted = (x /*: Array<any>*/) => /*: number */ {
+  let uniqueValueCount = 0,
+    lastSeenValue;
+  for (let i = 0; i < x.length; i++) {
+    if (i === 0 || x[i] !== lastSeenValue) {
+      lastSeenValue = x[i];
+      uniqueValueCount++;
     }
-    return uniqueValueCount;
-}
+  }
+  return uniqueValueCount;
+};
 
 export default uniqueCountSorted;
