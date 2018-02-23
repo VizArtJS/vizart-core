@@ -43,21 +43,21 @@ let wrapSVGText = function(text, width) {
 
 //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
 let wrapTextSmaller = function(text, width) {
-  let text = select(text),
-    words = text
+  let _text = select(text),
+    words = _text
       .text()
       .split(/\s+/)
       .reverse(),
-    currentSize = +text.style('font-size').replace('px', ''),
+    currentSize = +_text.style('font-size').replace('px', ''),
     word,
     line = [],
     lineNumber = 0,
     lineHeight = 1.2, // ems
     extraHeight = 0.2,
-    y = text.attr('y'),
-    dy = parseFloat(text.attr('dy')),
+    y = _text.attr('y'),
+    dy = parseFloat(_text.attr('dy')),
     //First span is different - smaller font
-    tspan = text
+    tspan = _text
       .text(null)
       .append('tspan')
       .attr('class', 'subTotal')
@@ -78,7 +78,7 @@ let wrapTextSmaller = function(text, width) {
       line.pop();
       tspan.text(line.join(' '));
       line = [word];
-      tspan = text
+      tspan = _text
         .append('tspan')
         .attr('x', 0)
         .attr('y', y)

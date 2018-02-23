@@ -93,16 +93,18 @@ const assignBound = (containerId, _opt) => {
     select(containerId),
     _opt.chart.margin
   );
+
+  return _opt;
 };
 
-const resizeBound = (containerId, _opt, _size) => {
+const getBound = (containerId, _opt, _size) => {
   if (!check(_size) || !check(_size.width) || !!check(_size.height)) {
     // recalculate width and height
     delete _opt.chart['width'];
     delete _opt.chart['height'];
   }
 
-  assignBound(containerId, _opt);
+  return assignBound(containerId, _opt);
 };
 
 export {
@@ -114,5 +116,5 @@ export {
   availableHeight,
   windowSize,
   assignBound,
-  resizeBound,
+  getBound,
 };

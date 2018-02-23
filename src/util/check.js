@@ -1,9 +1,5 @@
-import isUndefined from 'lodash-es/isUndefined';
-import isNull from 'lodash-es/isNull';
 import isNaN from 'lodash-es/isNaN';
 
-let check = function(d) {
-  return isUndefined(d) || isNull(d) || isNaN(d) ? false : true;
-};
+const check = d => d !== undefined && d !== null && !isNaN(d);
 
 export default check;
