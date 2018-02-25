@@ -1,3 +1,4 @@
+import { select } from 'd3-selection';
 import renderSVG from './renderSVG';
 
 const renderCanvas = (containerId, frontCanvasId, hiddenCanvasId, opts) => {

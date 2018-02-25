@@ -1,7 +1,7 @@
 import { select } from 'd3-selection';
 
 const renderSVG = (containerId, opt) => {
-  const container = select(_containerId)
+  const container = select(containerId)
     .append('svg')
     .attr('width', opt.chart.width)
     .attr('height', opt.chart.height)
