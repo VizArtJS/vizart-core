@@ -18,7 +18,7 @@ const StandardDispatchers = {
 const defaultComposers = {
   opt: null,
   data: (data, opt, cleanse) => data,
-  color: null,
+  color: (color, data, opt) => genericColor(color),
 };
 
 const chart = (containerId, opt, composers = defaultComposers) => ({
@@ -34,7 +34,12 @@ const chart = (containerId, opt, composers = defaultComposers) => ({
   render(data) {
     console.log('- 1 -  render svg ');
     this.data(data);
-    this._color = composers.color();
+    this._color = composers.color(
+      this._options.color,
+      this._data,
+      this._options
+    );
+
     const { container, svg } = renderSVG(containerId, this._options);
     this._container = container;
     this._svg = svg;
@@ -42,7 +47,11 @@ const chart = (containerId, opt, composers = defaultComposers) => ({
 
   update() {
     this._data = composers.data(this._data, this._options, false);
-    this._color = composers.color();
+    this._color = composers.color(
+      this._options.color,
+      this._data,
+      this._options
+    );
   },
 
   data(data) {

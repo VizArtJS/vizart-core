@@ -3,10 +3,10 @@ import uuid from '../util/uuid';
 
 import renderCanvas from './renderCanvas';
 
-const canvas = (chart, animate) =>
+const canvas = (chart) =>
   Object.assign({}, chart, {
-    _hiddenCanvasId: 'front-canvas' + uuid(),
-    _frontCanvasId: 'hidden-canvas-' + uuid(),
+    _hiddenCanvasId: 'hidden-canvas' + uuid(),
+    _frontCanvasId: 'front-canvas-' + uuid(),
     _frontCanvas: null,
     _hiddenCanvas: null,
     _frontContext: null,
@@ -42,13 +42,10 @@ const canvas = (chart, animate) =>
       this._container = container;
       this._svg = svg;
       this._detachedContainer = detachedContainer;
-
-      animate();
     },
 
     update() {
       chart.update();
-      animate();
     },
 
     revealVoronoi(color = '#ff5730') {
@@ -67,6 +64,7 @@ const canvas = (chart, animate) =>
 
       this.update();
     },
+
   });
 
 export default canvas;
