@@ -15,27 +15,40 @@ const StandardDispatchers = {
   Rendered: 'rendered',
 };
 
-const chart = (containerId, opt, optComposer) => ({
+const defaultComposers = {
+  opt: null,
+  data: (data, opt, cleanse) => data,
+  color: null,
+};
+
+const chart = (containerId, opt, composers = defaultComposers) => ({
   _isMobileSize: mobileAndTabletCheck(),
   _id: uuid(),
   _listeners: dispatch(values(StandardDispatchers)),
-  _options: getBound(containerId, optComposer(opt)),
+  _options: getBound(containerId, composers.opt(opt)),
   _data: [],
   _color: null,
   _container: null,
   _containerId: containerId,
 
   render(data) {
+    console.log('- 1 -  render svg ');
     this.data(data);
-    // this._color = this._provideColor();
-    const { container, svg } = renderSVG(this._containerId, this._options);
+    this._color = composers.color();
+    const { container, svg } = renderSVG(containerId, this._options);
     this._container = container;
     this._svg = svg;
   },
 
+  update() {
+    this._data = composers.data(this._data, this._options, false);
+    this._color = composers.color();
+  },
+
   data(data) {
+    console.log(' - data 1 -  svg data');
     if (data !== undefined && data !== null) {
-      this._data = data;
+      this._data = composers.data(data, this._options, true);
     }
 
     return this._data;
