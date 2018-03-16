@@ -1,6 +1,6 @@
 import { max } from 'd3-array';
 
-import Globals from '../../base/Globals';
+import Globals from '../../baseChart/Globals';
 
 import gradientColor from './gradient';
 import distinctColor from './distinct';

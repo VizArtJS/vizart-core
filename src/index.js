@@ -1,6 +1,6 @@
 export { version } from '../package.json';
 
-export * from './base';
+export * from './baseChart';
 export * from './color';
 export * from './options';
 export * from './util';

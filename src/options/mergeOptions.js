@@ -1,12 +1,12 @@
 import mergeWith from 'lodash-es/mergeWith';
 import MergeCustomizer from './MergeCustomizer';
 
-const mergeOptions = (_target, _source) => {
-  if (_source === undefined || _source === null) return _target;
+const mergeOptions = (target, source) => {
+  if (source === undefined || source === null) return target;
 
-  mergeWith(_target, _source, MergeCustomizer);
+  mergeWith(target, source, MergeCustomizer);
 
-  return _target;
+  return target;
 };
 
 export default mergeOptions;
