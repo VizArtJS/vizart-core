@@ -26,11 +26,11 @@ const equalIntervalBreaks = (
 
   // the first break will always be the minimum value
   // in the xset
-    const breaks = [theMin];
+  const breaks = [theMin];
 
   // The size of each break is the full range of the x
   // divided by the number of classes requested
-    const breakSize = (theMax - theMin) / nClasses;
+  const breakSize = (theMax - theMin) / nClasses;
 
   // In the case of nClasses = 1, this loop won't run
   // and the returned breaks will be [min, max]

@@ -8,7 +8,7 @@ const mergeBase = (...opts) => {
     mergeOptions(base, o);
   }
 
-  return _base;
+  return base;
 };
 
 export default mergeBase;
