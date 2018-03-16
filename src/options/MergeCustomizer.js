@@ -1,12 +1,11 @@
 import isArray from 'lodash-es/isArray';
 import isObject from 'lodash-es/isObject';
-import cloneDeep from 'lodash-es/cloneDeep';
 import merge from 'lodash-es/merge';
 
 const MergeCustomizer = (objValue, srcValue) => {
   if (isArray(objValue)) {
     let hasObjDef = false;
-    for (let d of objValue) {
+    for (const d of objValue) {
       if (isObject(d)) {
         hasObjDef = true;
         break;
