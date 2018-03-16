@@ -80,31 +80,31 @@ const windowSize = () => {
   return size;
 };
 
-const assignBound = (containerId, _opt) => {
-  _opt.chart.width = sanitizeWidth(_opt.chart.width, select(containerId));
-  _opt.chart.height = sanitizeHeight(_opt.chart.height, select(containerId));
-  _opt.chart.innerWidth = availableWidth(
-    _opt.chart.width,
+const assignBound = (containerId, opt) => {
+  opt.chart.width = sanitizeWidth(opt.chart.width, select(containerId));
+  opt.chart.height = sanitizeHeight(opt.chart.height, select(containerId));
+  opt.chart.innerWidth = availableWidth(
+    opt.chart.width,
     select(containerId),
-    _opt.chart.margin
+    opt.chart.margin
   );
-  _opt.chart.innerHeight = availableHeight(
-    _opt.chart.height,
+  opt.chart.innerHeight = availableHeight(
+    opt.chart.height,
     select(containerId),
-    _opt.chart.margin
+    opt.chart.margin
   );
 
-  return _opt;
+  return opt;
 };
 
-const getBound = (containerId, _opt, _size) => {
-  if (!check(_size) || !check(_size.width) || !!check(_size.height)) {
+const getBound = (containerId, opt, size) => {
+  if (!check(size) || !check(size.width) || !!check(size.height)) {
     // recalculate width and height
-    delete _opt.chart['width'];
-    delete _opt.chart['height'];
+    delete opt.chart['width'];
+    delete opt.chart['height'];
   }
 
-  return assignBound(containerId, _opt);
+  return assignBound(containerId, opt);
 };
 
 export {

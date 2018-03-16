@@ -2,7 +2,7 @@ import { select } from 'd3-selection';
 
 //Taken from http://bl.ocks.org/mbostock/7555321
 //Wraps SVG text
-let wrapSVGText = function(text, width) {
+const wrapSVGText = (text, width) => {
   text.each(function() {
     let text = select(this),
       words = text
@@ -42,7 +42,7 @@ let wrapSVGText = function(text, width) {
 };
 
 //Wraps SVG text - Taken from http://bl.ocks.org/mbostock/7555321
-let wrapTextSmaller = function(text, width) {
+const wrapTextSmaller = (text, width) => {
   let _text = select(text),
     words = _text
       .text()

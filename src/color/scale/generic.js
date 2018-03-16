@@ -1,4 +1,3 @@
-import map from 'lodash-es/map';
 import { max } from 'd3-array';
 
 import Globals from '../../base/Globals';
@@ -20,7 +19,7 @@ const genericColor = (_color, _data) => {
 
     case Globals.ColorType.DISTINCT:
       let _valMap = _data
-        ? map(_color.distinction, d => max(_data) * +d)
+        ? _color.distinction.map(d => max(_data) * +d)
         : _color.distinction;
 
       return distinctColor(_scheme, _valMap);

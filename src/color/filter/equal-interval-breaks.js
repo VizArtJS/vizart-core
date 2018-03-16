@@ -1,8 +1,5 @@
 /* taken from https://simplestatistics.org/ */
 
-import max from 'lodash-es/max';
-import min from 'lodash-es/min';
-
 /**
  * Given an array of x, this will find the extent of the
  * x and return an array of breaks that can be used
@@ -24,16 +21,16 @@ const equalIntervalBreaks = (
     return x;
   }
 
-  let theMin = min(x),
-    theMax = max(x);
+  const theMin = Math.min(...x),
+    theMax = Math.max(...x);
 
   // the first break will always be the minimum value
   // in the xset
-  let breaks = [theMin];
+    const breaks = [theMin];
 
   // The size of each break is the full range of the x
   // divided by the number of classes requested
-  let breakSize = (theMax - theMin) / nClasses;
+    const breakSize = (theMax - theMin) / nClasses;
 
   // In the case of nClasses = 1, this loop won't run
   // and the returned breaks will be [min, max]

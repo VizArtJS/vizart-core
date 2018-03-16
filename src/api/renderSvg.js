@@ -22,4 +22,19 @@ const renderSVG = (containerId, opt) => {
   };
 };
 
-export default renderSVG;
+const apiRender = state => ({
+  render(data) {
+    state._data = state._composers.data(data, state._options, true);
+    state._color = state._composers.color(
+      state._options.color,
+      state._data,
+      state._options
+    );
+
+    const { container, svg } = renderSVG(state._containerId, state._options);
+    state._container = container;
+    state._svg = svg;
+  },
+});
+
+export default apiRender;
