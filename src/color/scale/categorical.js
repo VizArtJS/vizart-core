@@ -10,34 +10,33 @@ import interpolateDivergentScheme from '../interpolator/divergent';
 import { warn } from '../../util/logger';
 import { MetroRain8 } from '../preset/metropolis';
 
-const _selectFromScheme = (interpolator, num) => {
+const _selectFromScheme = (interpolator, distinction) => {
   const scale = scaleSequential(interpolator);
 
-  if (num <= 1) {
+  if (distinction <= 1) {
     return scale(1);
   } else {
     //https://github.com/d3/d3-array#range
-    return range(num).map(d => scale(d / (num - 1)));
+    return range(distinction).map(d => scale(d / (distinction - 1)));
   }
 };
 
-const categoricalColor = (scheme, _num = 0) => {
-  let _scheme = scheme;
+const categoricalColor = (scheme, distinction = 0) => {
   if (!isString(scheme) && !isArray(scheme) && !isFunction(scheme)) {
     warn('color scheme is invalid: should be string, array or d3 interpolator');
     warn('MetroRain8 will be used by default');
-    _scheme = MetroRain8;
+      scheme = MetroRain8;
   }
 
-  let selectNum = _num <= 1 ? 12 : _num;
+    const selectNum = distinction <= 1 ? 12 : distinction;
   // warn('categorical number is invalid: should be larger than 0');
   // warn('12 will be used by default');
 
-  if (isString(_scheme)) {
-    let colorSet =
-      interpolateCategoricalScheme(_scheme) ||
-      interpolateSequentialScheme(_scheme) ||
-      interpolateDivergentScheme(_scheme);
+  if (isString(scheme)) {
+    const colorSet =
+      interpolateCategoricalScheme(scheme) ||
+      interpolateSequentialScheme(scheme) ||
+      interpolateDivergentScheme(scheme);
 
     if (colorSet != null) {
       if (isArray(colorSet)) {
@@ -48,10 +47,10 @@ const categoricalColor = (scheme, _num = 0) => {
     } else {
       return scaleOrdinal().range(MetroRain8);
     }
-  } else if (isFunction(_scheme)) {
-    return scaleOrdinal().range(_selectFromScheme(_scheme, selectNum));
+  } else if (isFunction(scheme)) {
+    return scaleOrdinal().range(_selectFromScheme(scheme, selectNum));
   } else {
-    return scaleOrdinal().range(_scheme);
+    return scaleOrdinal().range(scheme);
   }
 };
 
