@@ -16,17 +16,7 @@ const ccondition = (preset, hcl) =>
 const lcondition = (preset, hcl) =>
   withinRange(preset.lmin, preset.lmax, hcl[2]);
 
-const selectHCL = (preset, hcl) =>
+const hclSelector = (preset, hcl) =>
   hcondition(preset, hcl) && ccondition(preset, hcl) && lcondition(preset, hcl);
 
-class HclSelector {
-  constructor(preset) {
-    this.preset = preset;
-  }
-
-  validate(hcl) {
-    return selectHCL(this.preset, hcl);
-  }
-}
-
-export default HclSelector;
+export default hclSelector;

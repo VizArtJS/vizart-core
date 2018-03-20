@@ -25,10 +25,10 @@ const categoricalColor = (scheme, distinction = 0) => {
   if (!isString(scheme) && !isArray(scheme) && !isFunction(scheme)) {
     warn('color scheme is invalid: should be string, array or d3 interpolator');
     warn('MetroRain8 will be used by default');
-      scheme = MetroRain8;
+    scheme = MetroRain8;
   }
 
-    const selectNum = distinction <= 1 ? 12 : distinction;
+  const selectNum = distinction <= 1 ? 12 : distinction;
   // warn('categorical number is invalid: should be larger than 0');
   // warn('12 will be used by default');
 

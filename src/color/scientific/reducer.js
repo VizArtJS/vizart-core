@@ -1,4 +1,4 @@
-import HclSelector from './util/HclSelector';
+import hclSelector from './util/hcl-selector';
 import { generate } from './palette-gen';
 
 const DefaultOpt = {
@@ -9,27 +9,24 @@ const DefaultOpt = {
 };
 
 const reduceToPalette = (_count, preset, _opt = {}) => {
-  const _selector = new HclSelector(preset);
   const opt = Object.assign({}, DefaultOpt, _opt);
 
-  const q = opt.quality;
-  const useFV = opt.useFV;
-  const precision = opt.ultraPrecision;
-  const dType = opt.colorblind ? 'Compromise' : 'Default';
+  const config = {
+    ...opt,
+    distanceType: opt.colorblind ? 'Compromise' : 'Default',
+    selector: color => hclSelector(preset, color.hcl()),
+  };
 
-  const paletteSelector = color => _selector.validate(color.hcl());
-
+  delete config['colorblind'];
   // Generate colors
-  const colors = generate(_count, paletteSelector, useFV, q, precision, dType);
+  const colors = generate(_count, config);
 
-  return colors.map(color => {
-    return {
-      color: color,
-      hex: color.hex(),
-      hcl: color.hcl(),
-      lab: color.lab(),
-    };
-  });
+  return colors.map(color => ({
+    color: color,
+    hex: color.hex(),
+    hcl: color.hcl(),
+    lab: color.lab(),
+  }));
 };
 
 export default reduceToPalette;

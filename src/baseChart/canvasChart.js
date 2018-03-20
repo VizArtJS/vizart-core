@@ -20,7 +20,7 @@ const CanvasState = {
   _detachedContainer: null,
   _voronoi: null,
   _quadtree: null,
-  _animationState: null
+  _animationState: null,
 };
 
 const canvas = (containerId, opt, composers = defaultComposers) => {

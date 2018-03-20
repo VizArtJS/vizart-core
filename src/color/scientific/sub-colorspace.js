@@ -8,15 +8,15 @@ const getSubColorSpace = (
   },
   distanceType = 'Default'
 ) => {
-  let subspaceSamples = selectColorSpace(_selector);
+  const subspaceSamples = selectColorSpace(_selector);
 
-  let matchings = colors.reduce((match, d) => {
+  const matchings = colors.reduce((match, d) => {
     match[d.hex] = [];
     return match;
   }, {});
 
-  for (let color of subspaceSamples) {
-    let lab = color.lab();
+  for (const color of subspaceSamples) {
+    const lab = color.lab();
     let bestMatch;
     let minDistance = Infinity;
 

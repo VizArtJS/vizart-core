@@ -2,7 +2,7 @@ import getColorDistance from './get-color-distance';
 
 const diffSort = (colorsToSort, distanceType) => {
   // Sort
-  let diffColors = [colorsToSort.shift()];
+  const diffColors = [colorsToSort.shift()];
   while (colorsToSort.length > 0) {
     let index = -1;
     let maxDistance = -1;
@@ -24,9 +24,7 @@ const diffSort = (colorsToSort, distanceType) => {
     }
     let color = colorsToSort[index];
     diffColors.push(color);
-    colorsToSort = colorsToSort.filter((c, i) => {
-      return i != index;
-    });
+    colorsToSort = colorsToSort.filter((c, i) => i != index);
   }
   return diffColors;
 };

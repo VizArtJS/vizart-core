@@ -3,14 +3,15 @@ import { range } from 'd3-array';
 import validateLab from './validate-lab';
 import getColorDistance from './get-color-distance';
 
-const generate = function(
-  colorsCount = 8,
-  selector = x => true,
-  forceMode = false,
-  quality = 50,
-  ultra_precision = false,
-  distanceType = 'Default'
-) {
+const generate = (colorsCount = 8, config) => {
+  const {
+    selector = () => true,
+    forceMode = false,
+    quality = 50,
+    ultraPrecision = false,
+    distanceType = 'Default',
+  } = config;
+
   console.log(
     'Generate palettes for ' +
       colorsCount +
@@ -120,7 +121,7 @@ const generate = function(
 
     let colorSamples = [];
     let samplesClosest = [];
-    if (ultra_precision) {
+    if (ultraPrecision) {
       for (let l = 0; l <= 100; l += 1) {
         for (let a = -100; a <= 100; a += 5) {
           for (let b = -100; b <= 100; b += 5) {
@@ -222,18 +223,15 @@ const generate = function(
             kMeans[j] = colorSamples[closest];
           }
         }
-        freeColorSamples = freeColorSamples.filter(function(color) {
-          return (
+        freeColorSamples = freeColorSamples.filter(
+          color =>
             color[0] != kMeans[j][0] ||
             color[1] != kMeans[j][1] ||
             color[2] != kMeans[j][2]
-          );
-        });
+        );
       }
     }
-    return kMeans.map(function(lab) {
-      return chroma.lab(lab[0], lab[1], lab[2]);
-    });
+    return kMeans.map(lab => chroma.lab(lab[0], lab[1], lab[2]));
   }
 };
 
