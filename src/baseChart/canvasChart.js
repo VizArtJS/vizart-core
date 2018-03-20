@@ -18,9 +18,9 @@ const CanvasState = {
   _frontContext: null,
   _hiddenContext: null,
   _detachedContainer: null,
-  _dataState: null,
   _voronoi: null,
   _quadtree: null,
+  _animationState: null
 };
 
 const canvas = (containerId, opt, composers = defaultComposers) => {
