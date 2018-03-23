@@ -1,20 +1,20 @@
 const svgString2Image = (svgString, width, height, name) => {
-  let serializer = new XMLSerializer();
-  let imgsrc =
+  const serializer = new XMLSerializer();
+  const imgsrc =
     'data:image/svg+xml;base64,' +
     btoa(serializer.serializeToString(svgString)); // Convert SVG string to data URL
 
-  let canvas = document.createElement('canvas');
-  let context = canvas.getContext('2d');
-  let devicePixelRatio = window.devicePixelRatio || 1;
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  const devicePixelRatio = window.devicePixelRatio || 1;
 
   canvas.width = width * devicePixelRatio;
   canvas.height = height * devicePixelRatio;
   canvas.style.width = canvas.width / devicePixelRatio + 'px';
   canvas.style.height = canvas.height / devicePixelRatio + 'px';
 
-  let image = new Image();
-  image.onload = function() {
+  const image = new Image();
+  image.onload = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
 

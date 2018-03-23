@@ -1,7 +1,6 @@
-import map from 'lodash-es/map';
 import { max } from 'd3-array';
 
-import Globals from '../../base/Globals';
+import Globals from '../../baseChart/Globals';
 
 import gradientColor from './gradient';
 import distinctColor from './distinct';
@@ -10,23 +9,23 @@ import categoricalColor from './categorical';
 
 import { warn } from '../../util/logger';
 
-const genericColor = (_color, _data) => {
-  let _scheme = _color.scheme;
-  let _type = _color.type;
+const genericColor = (color, data) => {
+  let _scheme = color.scheme;
+  let _type = color.type;
 
   switch (_type) {
     case Globals.ColorType.GRADIENT:
-      return gradientColor(_scheme, _data);
+      return gradientColor(_scheme, data);
 
     case Globals.ColorType.DISTINCT:
-      let _valMap = _data
-        ? map(_color.distinction, d => max(_data) * +d)
-        : _color.distinction;
+      let _valMap = data
+        ? color.distinction.map(d => max(data) * +d)
+        : color.distinction;
 
       return distinctColor(_scheme, _valMap);
 
     case Globals.ColorType.DIVERGENT:
-      return divergentColor(_scheme, _data);
+      return divergentColor(_scheme, data);
 
     case Globals.ColorType.CATEGORICAL:
       return categoricalColor(_scheme);
