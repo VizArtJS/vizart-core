@@ -1,4 +1,4 @@
-import { genericColor } from '../color/index';
+import { genericColor } from '../color';
 
 const apiColor = state => ({
   color(color) {

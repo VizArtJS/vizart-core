@@ -1,4 +1,4 @@
-import { drawQuadtree } from '../canvas/index';
+import { drawQuadtree } from '../canvas';
 
 const apiRevealQuadtree = state => ({
   revealQuadtree(color = '#1f97e7') {
