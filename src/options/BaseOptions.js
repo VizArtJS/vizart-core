@@ -23,6 +23,7 @@ const BaseOpt = {
       update: 1000,
       remove: 500,
       color: 500,
+      tooltip: 500,
       quickUpdate: 500,
     },
   },

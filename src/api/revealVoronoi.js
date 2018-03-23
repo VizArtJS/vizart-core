@@ -1,4 +1,4 @@
-import { drawVoronoi } from '../canvas/index';
+import { drawVoronoi } from '../canvas';
 
 const apiRevealVoronoi = state => ({
   revealVoronoi(color = '#ff5730') {

@@ -4,7 +4,7 @@ import isFunction from 'lodash-es/isFunction';
 import isString from 'lodash-es/isString';
 import isArray from 'lodash-es/isArray';
 import { extent } from 'd3-array';
-import ckmeans from '../kmeans/index';
+import ckmeans from '../kmeans';
 import interpolateSequentialScheme from '../interpolator/sequential';
 import { warn } from '../../util/logger';
 import { MetroRain3 } from '../preset/metropolis';
