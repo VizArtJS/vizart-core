@@ -1,6 +1,6 @@
 // Given a text function and width function, truncates the text if necessary to
 // fit within the given width.
-let truncate = function(text, width) {
+const truncate = (text, width) => {
   return function(d, i) {
     let t = (this.textContent = text(d, i)),
       w = width(d, i);

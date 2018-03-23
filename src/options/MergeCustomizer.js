@@ -1,12 +1,11 @@
 import isArray from 'lodash-es/isArray';
 import isObject from 'lodash-es/isObject';
-import cloneDeep from 'lodash-es/cloneDeep';
 import merge from 'lodash-es/merge';
 
 const MergeCustomizer = (objValue, srcValue) => {
   if (isArray(objValue)) {
     let hasObjDef = false;
-    for (let d of objValue) {
+    for (const d of objValue) {
       if (isObject(d)) {
         hasObjDef = true;
         break;
@@ -23,15 +22,12 @@ const MergeCustomizer = (objValue, srcValue) => {
       // the single and first value is used as template
       const _template = objValue[0];
 
-      return srcValue.map(d => {
-        let _tep = cloneDeep(_template);
-        return merge(_tep, d);
-      });
+      return srcValue.map(d => merge(Object.assign({}, _template), d));
     } else {
       // target has multiple values, all source are merged by index
 
       return objValue.map((d, i) => {
-        let _tep = cloneDeep(d);
+        let _tep = Object.assign({}, d);
 
         if (srcValue.length > i) {
           return merge(_tep, srcValue[i]);

@@ -274,9 +274,8 @@
                 }
             });
 //            let palette = VizArtCore.reduceToPalette(totalColors, VizArtCore.Pimp);
-            let _selector = new VizArtCore.HclSelector(VizArtCore.Pimp);
             let subspaceSamples = VizArtCore.getSubColorSpace(palette, function (c) {
-                return _selector.validate(c.hcl);
+                return VizArtCore.hclSelector(VizArtCore.Pimp, c.hcl);
             });
 
             function mapColor(d) {

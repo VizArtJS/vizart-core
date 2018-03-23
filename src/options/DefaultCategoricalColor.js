@@ -1,4 +1,4 @@
-import Globals from '../base/Globals';
+import Globals from '../baseChart/Globals';
 import { TheMetLight } from '../color/preset/metropolis';
 
 const DefaultCategoricalColor = {

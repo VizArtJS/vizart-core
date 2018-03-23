@@ -1,15 +1,14 @@
-import cloneDeep from 'lodash-es/cloneDeep';
 import BaseOptions from './BaseOptions';
 import mergeOptions from './mergeOptions';
 
 const mergeBase = (...opts) => {
-  let _base = cloneDeep(BaseOptions);
+  const base = Object.assign({}, BaseOptions);
 
   for (let o of opts) {
-    mergeOptions(_base, o);
+    mergeOptions(base, o);
   }
 
-  return _base;
+  return base;
 };
 
 export default mergeBase;

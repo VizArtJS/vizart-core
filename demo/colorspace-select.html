@@ -26,9 +26,8 @@
 <script>
     $(document).ready(function () {
 
-        let _selector = new VizArtCore.HclSelector(VizArtCore.IceCube);
-        let subspaceSamples = VizArtCore.selectColorSpace(function (c) {
-            return _selector.validate(c.hcl);
+        const subspaceSamples = VizArtCore.selectColorSpace(function (c) {
+            return VizArtCore.hclSelector(VizArtCore.IceCube, c.hcl);
         });
 
 
