@@ -1,4 +1,4 @@
-import Globals from '../baseChart/Globals';
+import Globals from '../layer/Globals';
 import { MetroRain3 } from '../color/preset/metropolis';
 
 const DefaultSequentialColor = {
