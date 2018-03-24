@@ -1,4 +1,3 @@
-import { hsl } from 'd3-color';
 import linearStops from '../../color/filter/linear-stops';
 
 /**
