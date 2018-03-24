@@ -23,7 +23,7 @@ const CanvasState = {
   _animationState: null,
 };
 
-const canvas = (containerId, opt, composers = defaultComposers) => {
+const canvasLayer = (containerId, opt, composers = defaultComposers) => {
   const state = Object.assign(
     {},
     initState(containerId, opt, composers),
@@ -43,4 +43,4 @@ const canvas = (containerId, opt, composers = defaultComposers) => {
   );
 };
 
-export default canvas;
+export default canvasLayer;

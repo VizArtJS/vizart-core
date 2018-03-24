@@ -15,7 +15,7 @@ const defaultComposers = {
   color: (color, data, opt) => genericColor(color),
 };
 
-const svg = (containerId, opt, composers = defaultComposers) => {
+const svgLayer = (containerId, opt, composers = defaultComposers) => {
   const state = initState(containerId, opt, composers);
 
   return Object.assign(
@@ -29,4 +29,4 @@ const svg = (containerId, opt, composers = defaultComposers) => {
   );
 };
 
-export default svg;
+export default svgLayer;
