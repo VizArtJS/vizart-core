@@ -15,8 +15,8 @@ const defaultComposers = {
   color: (color, data, opt) => genericColor(color),
 };
 
-const svgLayer = (containerId, opt, composers = defaultComposers) => {
-  const state = initState(containerId, opt, composers);
+const svgLayer = (containerId, opt, composers) => {
+  const state = initState(containerId, opt, Object.assign({}, defaultComposers, composers));
 
   return Object.assign(
     state,
