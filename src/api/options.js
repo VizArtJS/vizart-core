@@ -1,8 +1,8 @@
-import { mergeOptions } from '../options';
+import merge from '../options/merge';
 
 const apiOptions = state => ({
   options(opt) {
-    state._options = mergeOptions(state._options, opt);
+    state._options = merge(state._options, opt);
     return state._options;
   },
 });
