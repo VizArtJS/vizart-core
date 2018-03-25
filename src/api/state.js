@@ -7,8 +7,7 @@ const StandardDispatchers = {
   Rendered: 'rendered',
 };
 
-const initState = (containerId, opt, composers) => {
-  return {
+const initState = (containerId, opt, composers) => ({
     _isMobileSize: isMobile(),
     _id: uuid(),
     _listeners: dispatch(Object.values(StandardDispatchers)),
@@ -18,7 +17,6 @@ const initState = (containerId, opt, composers) => {
     _container: null,
     _containerId: containerId,
     _composers: composers,
-  };
-};
+});
 
 export default initState;
