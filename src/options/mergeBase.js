@@ -1,14 +1,14 @@
 import BaseOptions from './BaseOptions';
-import mergeOptions from './mergeOptions';
+import merge from './merge';
 
-const mergeBase = (...opts) => {
+const mergeOptions = (...opts) => {
   const base = Object.assign({}, BaseOptions);
 
   for (let o of opts) {
-    mergeOptions(base, o);
+    merge(base, o);
   }
 
   return base;
 };
 
-export default mergeBase;
+export default mergeOptions;
