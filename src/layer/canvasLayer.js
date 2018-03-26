@@ -1,5 +1,7 @@
 import uuid from '../util/uuid';
 
+import defaultComposers from './default-composers';
+
 import apiOn from '../api/on';
 import apiColor from '../api/color';
 import apiOptions from '../api/options';
@@ -10,25 +12,22 @@ import initState from '../api/state';
 import apiRevealVoronoi from '../api/revealVoronoi';
 import apiRevealQuadtree from '../api/revealQuadtree';
 
-const CanvasState = {
-  _hiddenCanvasId: 'hidden-canvas' + uuid(),
-  _frontCanvasId: 'front-canvas-' + uuid(),
-  _frontCanvas: null,
-  _hiddenCanvas: null,
-  _frontContext: null,
-  _hiddenContext: null,
-  _detachedContainer: null,
-  _voronoi: null,
-  _quadtree: null,
-  _animationState: null,
-};
+const CanvasState = ()=> ({
+    _hiddenCanvasId: 'hidden-canvas' + uuid(),
+    _frontCanvasId: 'front-canvas-' + uuid(),
+    _frontCanvas: null,
+    _hiddenCanvas: null,
+    _frontContext: null,
+    _hiddenContext: null,
+    _detachedContainer: null,
+    _voronoi: null,
+    _quadtree: null,
+    _animationState: null,
+});
 
-const canvasLayer = (containerId, opt, composers = defaultComposers) => {
-  const state = Object.assign(
-    {},
-    initState(containerId, opt, composers),
-    CanvasState
-  );
+const canvasLayer = (containerId, opt, composers) => {
+  const state = initState(containerId, opt, Object.assign({}, defaultComposers, composers, CanvasState()));
+
 
   return Object.assign(
     state,
