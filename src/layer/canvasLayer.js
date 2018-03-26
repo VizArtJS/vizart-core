@@ -26,8 +26,8 @@ const CanvasState = ()=> ({
 });
 
 const canvasLayer = (containerId, opt, composers) => {
-  const state = initState(containerId, opt, Object.assign({}, defaultComposers, composers, CanvasState()));
-
+  const base = initState(containerId, opt, Object.assign({}, defaultComposers, composers));
+  const state = Object.assign(base, CanvasState());
 
   return Object.assign(
     state,
