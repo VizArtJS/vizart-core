@@ -236,14 +236,14 @@ const _color = {
 
 #### Generic Scheme
 generic are a set of colors that are eligible for both sequential and categorical usage
-##### Metropolis
-MetroCold3
-MetroCold4
-MetroCold5
-MetroDawn3
-MetroDawn4
-MetroRain3
-MetroRain8
+* Metropolis
+* MetroCold3
+* MetroCold4
+* MetroCold5
+* MetroDawn3
+* MetroDawn4
+* MetroRain3
+* MetroRain8
 
 ## License
 
