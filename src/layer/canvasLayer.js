@@ -1,6 +1,6 @@
 import uuid from '../util/uuid';
 
-import defaultComposers from './default-composers';
+import makeComposers from './make-composers';
 
 import apiOn from '../api/on';
 import apiColor from '../api/color';
@@ -26,7 +26,7 @@ const CanvasState = ()=> ({
 });
 
 const canvasLayer = (containerId, opt, composers) => {
-  const base = initState(containerId, opt, Object.assign({}, defaultComposers, composers));
+  const base = initState(containerId, opt, makeComposers(composers));
   const state = Object.assign(base, CanvasState());
 
   return Object.assign(
