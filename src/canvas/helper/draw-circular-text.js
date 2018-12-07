@@ -39,7 +39,7 @@ const drawCircularText = (
   //Rotate 50% of total angle for center alignment
   for (let j = 0; j < text.length; j++) {
     let charWid = ctx.measureText(text[j]).width;
-    startAngle += (charWid + (j == text.length - 1 ? 0 : kerning)) / radius / 2;
+    startAngle += (charWid + (j === text.length - 1 ? 0 : kerning)) / radius / 2;
   } //for j
 
   ctx.save(); //Save the default state before doing any transformations

@@ -1,4 +1,4 @@
-import defaultComposers from './default-composers';
+import makeComposers from './make-composers';
 
 import apiOn from '../api/on';
 import apiColor from '../api/color';
@@ -9,7 +9,7 @@ import apiUpdate from '../api/update';
 import initState from '../api/state';
 
 const svgLayer = (containerId, opt, composers) => {
-  const state = initState(containerId, opt, Object.assign({}, defaultComposers, composers));
+  const state = initState(containerId, opt, makeComposers(composers));
 
   return Object.assign(
     state,
