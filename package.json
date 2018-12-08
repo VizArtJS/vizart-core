@@ -3,8 +3,8 @@
   "version": "2.0.2",
   "description": "Core Components for VizArt",
   "main": "dist/vizart-core.js",
-  "module": "dist/vizart-core.mjs",
-  "jsnext:main": "dist/vizart-core.mjs",
+  "module": "dist/vizart-core.esm.js",
+  "jsnext:main": "dist/vizart-core.esm.js",
   "scripts": {
     "_prebuild": "eslint src test",
     "build": "rollup -c",
